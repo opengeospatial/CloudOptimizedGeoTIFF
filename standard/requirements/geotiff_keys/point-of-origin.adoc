@@ -1,0 +1,5 @@
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-keys/point-of-origin
+| A {set:cellbgcolor:#EEEEEE} | In a COG file  all reduced-resolution subfiles the same point of origin for the top left corner or the image than the full resolution subfile {set:cellbgcolor:#FFFFFF}
+|===

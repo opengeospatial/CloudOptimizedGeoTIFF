@@ -1,0 +1,43 @@
+[big]*i.     Abstract*
+
+The Cloud Optimized GeoTIFF (COG) rely on two characteristics of the TIFF v6 format (tiles and reduced resolution subfiles),
+GeoTIFF keys for georeference, and the HTTP range to allow for efficient streaming of imagery and grid coverage data in the web and to make possible fast data visualization and fast geospatial processing workflows with big TIFF files.
+A COG aware applications can download just the information they need to visualize or processing the data on the web. Numerous remote sensing datasets are available in cloud storage facilities for optimized visualization and processing.
+This standard formalizes the requirements that a TIFF file and for the HTTP server. In addition the standard proposed new GeoTIFF deal with COG tiles as tile sets based on commons tile matrix sets.
+
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogues.
+
+ogcdoc, OGC document, Cloud, GeoTIFF, Imagery, Web
+
+[big]*iii.   Preface*
+
+[NOTE]
+====
+Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work. >
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+====
+
+[big]*iv.    Security Considerations*
+
+COG has a requirements class that requires HTTP range. Attentions has been made not o prevent the secure variants of HTTP such as HTTPS. In particular, servers are encouraged to advertise the support for ranges in the Control-Allow-Headers header. Considerations to support Cross Origin Resource Sharing are done in the document.
+
+NOTE: The security measures discussed in the following sections only allow various kinds of authentication under HTTPS. HTTPS only provides confidentiality or encryption at the protocol level. No confidentiality or encryption is provided at the data level is provided at all.
+
+[big]*v.    Submitting organizations*
+
+The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
+
+* UAB-CREAF
+
+[big]*vi.     Submitters*
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+|*Name* |*Affiliation*
+| Joan Masó | UAB-CREAF
+|===

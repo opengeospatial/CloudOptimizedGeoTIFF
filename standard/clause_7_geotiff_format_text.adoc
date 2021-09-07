@@ -1,0 +1,154 @@
+[[GeoTIFFFormatRequirements]]
+== GeoTIFF format requirements
+A COG file is a TIFF file or a BigTIFF file that uses two main organization techniques available in the TIFF version 6.0 specification:
+Tiling and Reduced-Resolution Subfiles (sometimes called _Overviews_).
+The tiled data can also be compressed for more efficient passage online.
+In addition, a COG file uses the GeoTIFF conventions for storing the relevant geospatial metadata.
+
+=== Requirement Class GeoTIFF Tiles
+include::requirements/requirements_geotiff_format.adoc[]
+
+==== Basic format
+A COG file is a TIFF or a BigTiFF file.
+include::requirements/geotiff_format/basic_format.adoc[]
+
+==== Tiles
+In the context for a TIFF files, *Tiling* is a strategy of dividing the content in the TIFF file different from the classical _Strips_. In the _Strips_ approach the data is organized in sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information realted to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually,
+with a _strips_ all data from the previous rows needs to be read to get to the following rows.
+With *tiling*, a much quicker access to a certain area is possible,
+so that the portion of the file that needs to be read can be adjusted to almost match the application needs.
+
+include::requirements/geotiff_format/tiling.adoc[]
+
+NOTE: The concept Image File Directories (IFD) becomes important when the COG has also _overviews_. See the next conformance class for more details.
+
+The tiles defined in the TIFF version 6.0 specification can be mapped to the ones
+defined in the OGC Two dimensional tile matrix set standard.
+For example as in 2D-TMS, the TIFF 6.0 forces all tiles to be of the same size. This is possible with the introduction of
+the concept of padding: extra blank rows or columns added to the right-most and bottom-most tile of the
+to make them of the same shape as other tiles, if necessary.
+However, the vocabulary used in the TIFF version 6.0 and the one in the 2D-TMS differs. The following table
+provides a mapping between the two standards.
+
+[#mapping-tiff-and-2d-tms,reftext='{table-caption} {couner:table-num}']
+.Mapping between the OGC the 2D-TMS standardand the TIFF version 6.0, section 15
+[width = "100%",options="header"]
+|===
+| OGC 2D-TMS | TIFF v. 6.0 | Definition
+| TileWidth | TileWidth | The tile width in pixels. The number of columns in each tile
+| TileHeight | TileLength | The tile height in pixels. The number of rows in each tile
+| MatrixWidth | TilesAcross | Number of tiles in width direction
+| MatrixHeight | TilesDown | Number of files in the height direction
+|===
+
+Please note that the TIFF 6.0 specification
+imposes that _TileWidth and TileLength must be a multiple of 16_.
+The specification argue that this restriction improves performance in some graphics environments
+and enhances compatibility with compression schemes such as JPEG.
+There is no such restriction in the OGC 2D-TMS.
+
+==== Compression
+Compression of the bytes is a general best practice for enabling software
+to quickly access data, in particular over the network.
+The combination of compression with the HTTP GET Range requests maximizes efficiency.
+HTTP GET Range will be standardized in another requirements class.
+
+include::recommendations/geotiff_format/recommendation_compression.adoc[]
+
+[[GeoTIFFOverviewsRequirements]]
+=== Requirement Class GeoTIFF Overviews
+
+include::requirements/requirements_geotiff_overviews.adoc[]
+
+==== Requirement overviews
+*Reduced-Resolution Subfiles* (a.k.a _Overviews_) are downsampled versions of
+ the same image included in the same TIFF filealso .
+ This means it's a _zoomed out_ version from the original image. It has less detail but it is also smaller.
+ For visualization purposes or for analytical processes that do not require full resolution,
+ a COG can provided _overviews_, to match different scale denominators or cell sizes required by clients.
+ _Reduced-Resolution Subfiles_ increase the size of the file, but increase performance.
+
+NOTE: Some COG descriptions created by the community use the concept of _overviews_. Actually,
+there is nothing called _overviews_ in the TIFF version 6.0 specification.
+Instead, the TIFF version 6.0 describes how a TIFF file can be composed by one or more image each one stored in
+an Image File Directories (IFD). Some IFD may contain reduced-resolution subfiles.
+This is the reason why this document uses the expression _Reduced-Resolution Subfile_ instead of _overview_.
+
+There may be more than one IFD in a TIFF file and each IFD indicates
+the offset of the next IFD sits in the file (or 0 if no other IFD is available).
+Each IFD defines a subfile. Having images as subfiles have several applications.
+The SubFileType entry specifies three basic types of subfiles.
+Type 1 means "full-resolution image data" and type 2 means "reduced-resolution image data of the full resolution one".
+
+include::requirements/geotiff_overviews/overviews.adoc[]
+
+NOTE: The presence of reduced-resolution subfiles in a COG file is optional. Only the COG files that conform to this conformance class are forced to have reduced-resolution subfiles.
+
+NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be followed by its reduced-resolution subfiles
+
+[[GeoTIFFKeysRequirements]]
+=== Requirement Class GeoTIFF Keys
+The GeoTIFF standard defines a mechanism to add GeoTIFF keys to a TIFF file.
+The main purpose of these keys is to add a geospatial reference to the data stored in the TIFF file. In a COG, GeoTIFF keys are a fundamental part of the standard as most of the COG files are geospatially referenced TIFFs.
+
+include::requirements/requirements_geotiff_keys.adoc[]
+
+==== Requirement GeoTIFF
+A COG uses GeoTIFF to document the metadata about the TIFF file.
+
+include::requirements/geotiff_keys/basic_metadata_format.adoc[]
+
+==== Requirement Georeference Keys
+There is a geometrical relation between the reduced-resolution subfiles and the corresponding full-resolution subfile. Only full-resolution subfiles are required to have GeoTIFF keys.
+
+include::requirements/geotiff_keys/keys_georeference.adoc[]
+
+Clients have the option to use geometrical relations between the reduced-resolution subfiles and the corresponding full-resolution subfile.
+
+==== Requirement No Tile Matrix Set
+All linked reduced-resolution subfiles (a.k.a IFDs SubfileType 2) that are linked
+to a SubfileType 1 IFD share the set of georeference keys from the full resolution IFD. In practice this means that they have a common CRS and extent information, and differ only by their resolution.
+This means that we have to assume that all related subfiles share the same point of origin for the top left corner or the image.
+
+include::requirements/geotiff_keys/point-of-origin.adoc[]
+
+In this case, the pixel size in the first dimension of a reduced-resolution subfile can be calculated by multiplying the full-resolution subfile pixel size by the ImageWidth ratio between the full-resolution and the reduced-resolution.
+The pixel size in the second dimension of a reduced-resolution subfile can be calculated by multiplying the full-resolution subfile pixel size by the ImageHeight ratio between the full-resolution and the reduced-resolution.
+
+For the IFD reduced-resolution subfiles linked to IFD0,  IFDn_PixelScaleX and IFDn_PixelScaleY can be calculated like this:
+
+----
+IFDn_PixelScaleX=IFD0_PixelScaleX*IFD0_ImageWidth/IFDn_ImageWidth
+IFDn_PixelScaleY=IFD0_PixelScaleY*IFD0_ImageHeight/IFDn_ImageHeight
+----
+
+For a georeferenced file with a projected CRS that is fully defined in the EPSG database
+there is no need to define the base Geographic CRS, geodetic datum, etc. in the TIFF file.
+In these case, the following keys in the IFD0 are sufficient;
+
+----
+ImageWidth = 15829
+ImageHeight = 6520
+ModelTiepointTag = (0 0 0 187334 3255440 0)
+ModelPixelScaleTag = (30 30 0)
+GeoKeyDirectoryTag:
+-    GTModelTypeGeoKey = 1 (ModelTypeProjected 2D)
+-    GTRasterTypeGeoKey = 1 (RasterPixelIsArea)
+-    ProjectedCRSGeoKey = 32628 (Projected 2D CRS WGS 84 / UTM zone 28N)
+----
+
+This example corresponds to a Landsat5 mosaic over the Canary islands with a resolution
+of 30 meters per pixel.
+There is a grid intersection line in the image at pixel location (0, 0)
+
+(the 2 first numbers in ModelTiepointTag), that corresponds to
+the projected coordinate reference system easting/northing of (X:187334, Y:3255440)
+(the numbers 4th and 5th in ModelTiepointTag) in the EPSG:32628 (WGS 84 / UTM zone 28N)
+
+The georeference of the reduced-resolution subfiles (a.k.a IFDs SubfileType 2)
+that are linked to this IFD0 are supposed to be the same except ModelPixelScaleTag
+representing the meters per pixel (pixel size).
+In this example, IFD0 has ImageWidth=20111 and ImageHeigth=16882 while IFD1 has ImageWidth=10056 and ImageHeigth=8441, so
+
+IFD1_PixelScaleX and IFD1_PixelScaleY can be calculated as:
+30*20111/10056=59.997 and 30*16882/8441=60. As we can see in the example, non tile Matrix Set based tiles can easily result in a non square pixels; a situation that may complicate presenting or combining this data with other data that has square pixels.

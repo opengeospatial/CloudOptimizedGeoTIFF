@@ -1,0 +1,5 @@
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-format/tiling
+| A {set:cellbgcolor:#EEEEEE} | All Image File Directories (IFD) in a COG file SHALL be organized into *tiles* (instead of strips) as described in section 15 of the TIFF version 6.0 specification {set:cellbgcolor:#FFFFFF}
+|===

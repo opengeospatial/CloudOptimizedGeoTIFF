@@ -1,0 +1,8 @@
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-media-type/media-type
+| A {set:cellbgcolor:#EEEEEE}| When required, a COG file should use the MIME type _image/tiff_ with the application parameter value _cloud-optimized-geotiff_, therefore as follows:
+
+image/tiff; application=cloud-optimized-geotiff
+ {set:cellbgcolor:#FFFFFF}
+|===

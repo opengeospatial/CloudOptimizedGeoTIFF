@@ -1,0 +1,6 @@
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-http-range/use-geotiff
+| A {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server serving COG files SHALL support HTTP ranges {set:cellbgcolor:#FFFFFF}
+| B {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server serving COG files shall use byte ranges. {set:cellbgcolor:#FFFFFF}
+|===

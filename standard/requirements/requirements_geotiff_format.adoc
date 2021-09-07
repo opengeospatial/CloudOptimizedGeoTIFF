@@ -1,0 +1,9 @@
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format {set:cellbgcolor:#FFFFFF}
+|Target type |TIFF Encoder
+|Dependency |http://www.opengis.net/spec/GeoTIFF/1.1/req/Core
+|Dependency |https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf
+|Dependency |bigtiff.org |
+|===

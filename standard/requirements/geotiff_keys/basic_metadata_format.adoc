@@ -1,0 +1,5 @@
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-format/use-geotiff
+| A {set:cellbgcolor:#EEEEEE} | A COG file SHALL include and encode geospatial metadata in GeoTIFF format following a GeoTIFF standard {set:cellbgcolor:#FFFFFF}
+|===

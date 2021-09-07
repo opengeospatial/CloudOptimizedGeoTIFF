@@ -1,0 +1,6 @@
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-format/use-geotiff
+| A {set:cellbgcolor:#EEEEEE} | If the resulting COG file is smaller than 4Gb a COG file SHALL follow the TIFF version 6.0 standard {set:cellbgcolor:#FFFFFF}
+| B {set:cellbgcolor:#EEEEEE} | If the resulting COG file is bigger than 4Gb, the COG file SHALL follow the BigTIFF standard that modifies the TIFF version 6.0 standard {set:cellbgcolor:#FFFFFF}
+|===

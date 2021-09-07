@@ -1,0 +1,44 @@
+== Terms and Definitions
+This document used the terms defined in https://portal.ogc.org/public_ogc/directives/directives.php[OGC Policy Directive 49], which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard and OGC documents do not use the equivalent phrases in the ISO/IEC Directives, Part 2.
+
+This document also uses terms defined in the OGC Standard for Modular specifications (https://portal.opengeospatial.org/files/?artifact_id=34762[OGC 08-131r3]), also known as the 'ModSpec'. The definitions of terms such as standard, specification, requirement, and conformance test are provided in the ModSpec.
+
+For the purposes of this document, the following additional terms and definitions apply.
+
+4.1. cloud computing::
+
+on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user [wikipedia]
+
+4.2. geokey::
+
+key in a  GeoTIFF  equivalent in function to a TIFF tag, but using a different offset
+mechanism
+
+4.2. GeoTIFF::
+
+standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file or in a BigTIFF [GeoTIFF Format Specification 1.0]]
+
+4.3. overview::
+
+downsampled versions of the same image.
+
+4.3. tag::
+packet of numerical or ASCII values, which have a numerical "Tag" identifier indicating their information content
+
+4.4. tile::
+
+geometric shape with known properties that may or may not be the result of a tiling (tessellation) process. A tile consists of a single connected "piece" (topological disc) without "holes" or "lines" [OGC 19-014r3]+
++
+small rectangular representation of geographic data, often part of a set of such elements, covering a tiling scheme and sharing similar information content and graphical styling. A tile can be uniquely defined in a tile matrix by one integer index in each dimension. Tiles are mainly used for fast transfer (particularly in the web) and easy display at the resolution of a visualization device. Tiles can be grid based pictorial representations, coverage subsets, or feature based representations (e.g., vector tiles). [OGC 2DTMS]
+
+4.5. tile matrix::
+
+grid tile scheme that defines how space is partitioned into a set of conterminous tiles at a fixed scale. [OGC 2DTMS]
+
+4.6. tile matrix set::
+
+tile scheme composed by collection of tile matrices defined at different scales covering approximately the same area and have a common coordinate reference system. [OGC 2DTMS]
+
+4.7. subfile::
+
+mechanism for including multiple images in a single TIFF file based on the use of IFDs

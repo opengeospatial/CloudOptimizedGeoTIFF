@@ -1,0 +1,4 @@
+== Media Types for any data encoding(s)
+A  GeoTIFF  file  is  a  TIFF  file.  It  is  common  to  use  the  tiff  MIME  type, _image/tiff_ according  to [RFC3302] (see https://www.iana.org/assignments/media-types/image/tiff). The registration of the MIME type also allows for a _application_ with no format restriction for default value.
+
+include::recommendations/media_type/media_type.adoc[]
