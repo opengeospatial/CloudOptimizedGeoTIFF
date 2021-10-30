@@ -23,4 +23,4 @@ Springer LNCS is widely used in technical and computer science journals and othe
 [[COGEO]]
 [1] Cloud Optimized GeoTIFF. An imagery format for cloud-native geospatial processing. In Internet: https://www.cogeo.org/
 [[GDAL_DOG]]
-[2] GDAL COG – Cloud Optimized GeoTIFF generator. In Internet: https://gdal.org/drivers/raster/cog.html
+[2] GDAL COG - Cloud Optimized GeoTIFF generator. In Internet: https://gdal.org/drivers/raster/cog.html
