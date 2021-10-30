@@ -15,7 +15,7 @@ include::requirements/geotiff_format/basic_format.adoc[]
 include::recommendations/geotiff_format/basic_format.adoc[]
 
 ==== Tiles
-In the context for a TIFF files, *Tiling* is a strategy of dividing the content in the TIFF file different from the classical _Strips_. In the _Strips_ approach the data is organized in sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information realted to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually,
+In the context for a TIFF files, *Tiling* is a strategy of dividing the content in the TIFF file different from the classical _Strips_. In the _Strips_ approach the data is organized in sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information related to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually,
 with a _strips_ all data from the previous rows needs to be read to get to the following rows.
 With *tiling*, a much quicker access to a certain area is possible,
 so that the portion of the file that needs to be read can be adjusted to almost match the application needs.
@@ -33,7 +33,7 @@ However, the vocabulary used in the TIFF version 6.0 and the one in the 2D-TMS d
 provides a mapping between the two standards.
 
 [#mapping-tiff-and-2d-tms,reftext='{table-caption} {couner:table-num}']
-.Mapping between the OGC the 2D-TMS standardand the TIFF version 6.0, section 15
+.Mapping between the OGC the 2D-TMS standard and the TIFF version 6.0, section 15
 [width = "100%",options="header"]
 |===
 | OGC 2D-TMS | TIFF v. 6.0 | Definition
@@ -64,7 +64,7 @@ include::requirements/requirements_geotiff_overviews.adoc[]
 
 ==== Requirement overviews
 *Reduced-Resolution Subfiles* (a.k.a _Overviews_) are downsampled versions of
- the same image included in the same TIFF filealso .
+ the same image included in the same TIFF file also.
  This means it's a _zoomed out_ version from the original image. It has less detail but it is also smaller.
  For visualization purposes or for analytical processes that do not require full resolution,
  a COG can provided _overviews_, to match different scale denominators or cell sizes required by clients.
@@ -86,7 +86,7 @@ include::requirements/geotiff_overviews/overviews.adoc[]
 
 NOTE: The presence of reduced-resolution subfiles in a COG file is optional. Only the COG files that conform to this conformance class are forced to have reduced-resolution subfiles.
 
-NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be followed by its reduced-resolution subfiles
+NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be followed by its reduced-resolution subfiles.
 
 [[GeoTIFFKeysRequirements]]
 === Requirement Class GeoTIFF Keys

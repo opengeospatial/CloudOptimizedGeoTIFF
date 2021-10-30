@@ -19,7 +19,7 @@ and another for download purposes.
 COG rely on two complementary approaches already available in the existing standards to achieve its goal:
 
 * The first is the ability of GeoTIFF to store the raw pixels of the image organize in an efficient way.
-* The second is HTTP GET Range requests, that let web clients to ask for just  the portions of a file that they need.
+* The second is HTTP GET Range requests, that let web clients to ask for just the portions of a file that they need.
 
 Using the first organizes the GeoTIFF so the latter requests can easily select
 and get the parts of the file that are useful for processing using the second.
