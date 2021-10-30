@@ -12,6 +12,8 @@ include::requirements/requirements_geotiff_format.adoc[]
 A COG file is a TIFF or a BigTiFF file.
 include::requirements/geotiff_format/basic_format.adoc[]
 
+include::recommendations/geotiff_format/basic_format.adoc[]
+
 ==== Tiles
 In the context for a TIFF files, *Tiling* is a strategy of dividing the content in the TIFF file different from the classical _Strips_. In the _Strips_ approach the data is organized in sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information realted to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually,
 with a _strips_ all data from the previous rows needs to be read to get to the following rows.
