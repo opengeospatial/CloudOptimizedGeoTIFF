@@ -1,16 +1,10 @@
 [[HTTPRangeSupportRequirements]]
 == HTTP range support requirements
-HTTP Version 1.1 introduced a range header in the GET requests
-that allows for requesting only a fragment of a resource.
-If the server advertises with an Accept-Ranges: bytes header in its response,
-it is telling the client that bytes of data can be requested in parts, in separated requests.
-The client can request just the bytes that it needs from the server at any time.
-On the broader web it is very useful for serving things like video,
-so clients don't have to download the entire file to begin playing it.
-In here, it is useful to get only the tiles needed at a particular time.
-A client showing a COG file in the screen can request the resolutions
-it needs and only the tiles needed to cover the screen.
-Once the user moves or pans, other GET range requests will query for other resolutions and tiles.
+HTTP Version 1.1 introduced a range header in the GET requests that supports requesting only a fragment of a resource.
+If the server advertises with an "Accept-Ranges: bytes" header in its response, the server is telling the client that bytes of data can be requested in parts, in separated requests.
+The client can request just the bytes that it needs from the server at any time. In a web environment, this is very useful for serving things such as video as clients do not need to download the entire file to begin playing it.
+Herein this use case, it is useful to get only the tiles needed at a particular time.
+A client showing a COG file on the screen can request the resolutions needed and only the tiles needed to cover the screen. Once the user moves or pans, other GET range requests will query for other resolutions and tiles.
 
 === Requirement Class HTTP range
 
@@ -20,7 +14,7 @@ include::requirements/requirements_httprange.adoc[]
 
 include::requirements/httprange/httprange.adoc[]
 
-The use of range in web browsers using HTTPS is restricted by the CORS rules.
+The use of range in web browsers using HTTPS is restricted by the Cross-Origin Resource Sharing (CORS) rules (read ore about this here: https://support.streamroot.io/hc/en-us/articles/115003168773-Range-request-basics).
 This is why the servers have to explicitly declare
 that they allow the "range" header from a client that is not in the same domain.
 Since this is a very common use case in geospatial data sharing
@@ -28,7 +22,7 @@ the decision was to make this a requirement.
 
 include::requirements/httprange/httpsrange.adoc[]
 
-NOTE: The support for range in HTTPS is necessary but not sufficient.
+NOTE: Support for range in HTTPS is necessary but not sufficient.
 A server that wants to authorize a client application from another domain
 (under the CORS rules) should also use the Access-Control-Allow-Origin: header
 to indicate what domains are authorized to read the COG file

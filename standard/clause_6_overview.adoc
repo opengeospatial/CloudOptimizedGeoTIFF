@@ -1,48 +1,32 @@
 == Overview
-Traditionally, high resolution imagery requires big files that have to be entirely downloaded to the client to be analyzed or to visualized. This can require some time preventing the creation of real time applications. One of the most popular formats in the world is the TIFF format.  The format was created by the Aldus Corporation for use in desktop publishing. Aldus realized the last version of the TIFF specification in 1992 (v. 6.0), subsequently updated with an Adobe Systems copyright after the Adobe acquired Aldus in 1994. Several Aldus or Adobe technical notes have been published with minor extensions to the format, and several specifications have been based on TIFF 6.0, including TIFF/EP (ISO 12234-2), TIFF/IT (ISO 12639), TIFF-F (RFC 2306) and TIFF-FX (RFC 3949) and GeoTIFF (OGC 19-008r4, v1.1) and BigTIFF.
+Traditionally, high resolution imagery requires big files that have to be entirely downloaded to the client to be analyzed or visualized. This can require some considerable download time thus preventing the creation of real time applications. One of the most popular formats in the world is the TIFF format.  The format was created by the Aldus Corporation for use in desktop publishing. Aldus released the last version of the TIFF specification in 1992 (v. 6.0), subsequently updated with an Adobe Systems copyright after the Adobe acquired Aldus in 1994. Several Aldus or Adobe technical notes have been published with minor extensions to the format, and several specifications have been based on TIFF 6.0, including TIFF/EP (ISO 12234-2), TIFF/IT (ISO 12639), TIFF-F (RFC 2306) and TIFF-FX (RFC 3949) and GeoTIFF (OGC 19-008r4, v1.1) and BigTIFF.
 
-The TIFF is a flexible, adaptable file format for handling images and data within a single file, by including the header tags (size, definition, image-data arrangement, applied image compression) defining the images. The ability to store image data in a lossless format makes a TIFF file a useful image archive. TIF can be used to store grey scale, color or RGB images as well as integer of floating point data making it ideal as a support for storing the rangeset of grid coverage data.
+TIFF is a flexible, adaptable file format for handling images and data within a single file, by including the header tags (size, definition, image-data arrangement, applied image compression) defining the images. The ability to store image data in a lossless format makes a TIFF file a useful image archive. TIF can be used to store grey scale, color or RGB images as well as integer of floating point data making it ideal as a support for storing the rangeset of grid coverage data.
 
-The Cloud Optimized GeoTIFF (COG) rely on two characteristics of the TIFF v6 format (in combination with the georeference GeoTIFF keys) and a HTTP relatively unused property to allow for efficient streaming of imagery and grid coverage data in the web, to enable fast data visualization and fast geospatial processing workflows. This particular type of TIFF has been recently used to set up large series of remote sensing images in repositories of cloud providers (e.g. Amazon Web Services) enabling cloud processing at lower traffic. In fact, COG-aware software can request just the portions of data that it needs,
-improving accessing time and bandwidth. This is probably why it is called. Cloud Optimized GeoTIFF.
+To improve TIFF performance over the web, COG relies on two characteristics of the TIFF v6 format, the georeference GeoTIFF keys and a HTTP relatively unused property. This way, COG allows for efficient streaming of imagery and grid coverage data in the web, enables fast data visualization and facilitates faster geospatial processing workflows. This particular type of TIFF has been recently used to set up large series of remote sensing images in repositories of cloud providers (e.g. Amazon Web Services) enabling cloud processing at lower traffic. In fact, COG-aware software can request just the portions of data that it needs, improving accessing time and bandwidth. This is probably why it is called Cloud Optimized GeoTIFF.
 
-COG is based on the GeoTIFF standard and does not introduce anything that was not already TIFF v6 so legacy software should be able to read COG files with no additional modifications. However, the legacy software will not be able to take advantage of the streaming capabilities,
-but can easily download the whole file and read it.
+COG is based on the GeoTIFF standard and does not introduce new additions capabilities that are not already in TIFF v6. As such, legacy software should be able to read COG files with no additional modifications. However, the legacy software will not be able to take advantage of the streaming capabilities, but still can easily download the whole file and read it.
 
-The amount of data that geospacial analytics has available has increased a lot in recent years that downloading the data into a single computer could not be feasible anymore. Providing data in the COG format can help decrease how much data is downloaded and copied. Since online software systems can stream the data applications do not need to keep their own copy
-of the data for efficient access.
-New online software can access it at the same time efficiently,
-while old version can download completely.
-This avoids the need to have multiple copies of the files; one for fast access
-and another for download purposes.
+The amount of data available for geospatial analytics has increased considerably in recent years. Therefore, downloading the data into a single computer is often not feasible. Providing data in the COG format can help decrease how much data is downloaded and copied.
+This is because online software systems can stream the data applications do not need to keep their own copy of the data for efficient access.
+New online software can access the content efficiently, while old version can download completely.
+This avoids the need to have multiple copies of the files: one for fast access and another for download purposes.
 
-COG rely on two complementary approaches already available in the existing standards to achieve its goal:
+COG relies on two complementary approaches already available in the existing standards to achieve its goal:
 
-* The first is the ability of GeoTIFF to store the raw pixels of the image organize in an efficient way.
-* The second is HTTP GET Range requests, that let web clients to ask for just the portions of a file that they need.
+* The first is the ability of GeoTIFF to store the raw pixels of the image organized in an efficient way.
+* The second is HTTP GET Range requests, that let web clients request just the portions of a file that they need.
 
-Using the first organizes the GeoTIFF so the latter requests can easily select
-and get the parts of the file that are useful for processing using the second.
+Using the first approach COG organizes the GeoTIFF so the latter requests can easily select
+and get the parts of the file that are useful for processing.
 
-=== Bringing them together
-The Tiling and Reduced-Resolution Subfiles (sometimes called Overviews)
-in the GeoTIFF allow for the right structure on COG files so that the HTTTP
-GET Range queries can request just the part of the file that is relevant.
+=== Efficient organization of data in a TIFF file
+The Tiling and Reduced-Resolution Subfiles (sometimes called Overviews) in the GeoTIFF format supports the necessary structure for COG files so that the HTTP GET Range queries can request just the part of the file that is relevant.
 
-Reduced-Resolution Subfiles come into play when the client wants to render a quick image
-of the whole or a big part of the area represented in the file.
-Instead of downloading every pixel, the software can just request a smaller,
-already created, lower resolution version. The structure of the COG file on an HTTP Range
-supporting web server enables a client software to easily find just the part of the whole file that is needed.
+Reduced-Resolution Subfiles come into play when the client wants to render a quick image of the whole or a big part of the area represented in the file. Instead of downloading every pixel, the software can just request a smaller, already created, lower resolution version. The structure of the COG file on an HTTP Range supporting web server enables client software to easily find just the part of the whole file that is needed.
 
-Tiles come into play when some small area of the overall extend of the COG file
-needs to be processed or visualized. This could be part of a reduced-resolution subfile,
-or it could be at full resolution. Tile organization makes all the relevant bytes of an area
-(a tile) to be in the same part of the file, so the software can use
-HTTP GET Range request to get only the tiles it needs.
+Tiles come into play when some small area of the overall extent of the COG file needs to be processed or visualized. This could be part of a reduced-resolution subfile, or it could be at full resolution. Tile organization makes all the relevant bytes of an area (a tile) to be in the same part of the file, so the software can use HTTP GET Range request to get only the tiles it needs.
 
-=== Relation with OGC Tile Set Standards
+=== Relation to OGC Tile Set Standards
 
-The combined use of tiles and resolution levels is not new in the OGC standards. In fact the Two-dimensional Tile Matrix Set standard (and the old WMTS 1.0) use exactly the same approach. However, the OGC API tiles (and the old WMTS 1.0) requires a service to be installed in the web server provided or to create thousands of pre-generated independent tiles. Non of this is necessary in the COG approach as most of the modern web services support HTTP range natively.
-
-This standard recognizes the relation between COG and 2DTMS and includes an extra requirement class that could allow for using a list of COGs to store a Tile Set based on Common Tile Matrix Sets.
+The combined use of tiles and resolution levels is not new in OGC standards. In fact the OGC Two-dimensional Tile Matrix Set standard (and the older OGC WMTS 1.0) use exactly the same approach. However, the draft OGC API - Tiles specification and the older WMTS 1.0 standard require either a service to be installed in the web server provided or thousands of pre-generated independent tiles to be created. None of this is necessary in the COG approach as most of the modern web services natively support HTTP range.

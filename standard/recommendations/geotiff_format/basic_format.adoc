@@ -1,3 +1,4 @@
+[%unnumbered]
 [width="90%",cols="2,6"]
 |===
 |*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-class-geotiff-format/use-geotiff

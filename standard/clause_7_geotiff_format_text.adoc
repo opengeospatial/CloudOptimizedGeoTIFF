@@ -15,22 +15,19 @@ include::requirements/geotiff_format/basic_format.adoc[]
 include::recommendations/geotiff_format/basic_format.adoc[]
 
 ==== Tiles
-In the context for a TIFF files, *Tiling* is a strategy of dividing the content in the TIFF file different from the classical _Strips_. In the _Strips_ approach the data is organized in sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information related to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually,
-with a _strips_ all data from the previous rows needs to be read to get to the following rows.
-With *tiling*, a much quicker access to a certain area is possible,
-so that the portion of the file that needs to be read can be adjusted to almost match the application needs.
+In the context for a TIFF file, *Tiling* is a strategy for dividing the content in the TIFF file differently than using the classical _Strips_. In the _Strips_ approach the data are organized into sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information related to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually, with  _strips_ all data from the previous rows needs to be read to get to the following rows.
+With *tiling*, a much quicker access to a certain area is possible so that the portion of the file that needs to be read can be adjusted to better match the application needs.
 
 include::requirements/geotiff_format/tiling.adoc[]
 
-NOTE: The concept Image File Directories (IFD) becomes important when the COG has also _overviews_. See the next conformance class for more details.
+NOTE: The concept Image File Directories (IFD) becomes important when the COG has also _overviews_. See the next requirements class for more details.
 
-The tiles defined in the TIFF version 6.0 specification can be mapped to the ones
-defined in the OGC Two dimensional tile matrix set standard.
-For example as in 2D-TMS, the TIFF 6.0 forces all tiles to be of the same size. This is possible with the introduction of
-the concept of padding: extra blank rows or columns added to the right-most and bottom-most tile of the
-to make them of the same shape as other tiles, if necessary.
-However, the vocabulary used in the TIFF version 6.0 and the one in the 2D-TMS differs. The following table
-provides a mapping between the two standards.
+Tiles as defined in the TIFF version 6.0 specification can be mapped to the ones defined in the OGC Two Dimensional Tile Matrix Set Standard (2S-TMS).
+For example in 2D-TMS, the TIFF 6.0 forces all tiles to be of the same size.
+This is possible with the introduction of the concept of padding:
+If necessary extra blank rows or columns added to the right-most and bottom-most tile of the to make them of the same shape as other tiles.
+However, the naming of the TIFF tags used version 6.0 and the property names used in the 2D-TMS differ.
+The following table provides a mapping between the two standards.
 
 [#mapping-tiff-and-2d-tms,reftext='{table-caption} {couner:table-num}']
 .Mapping between the OGC the 2D-TMS standard and the TIFF version 6.0, section 15
@@ -44,8 +41,8 @@ provides a mapping between the two standards.
 |===
 
 Please note that the TIFF 6.0 specification
-imposes that _TileWidth and TileLength must be a multiple of 16_.
-The specification argue that this restriction improves performance in some graphics environments
+imposes the requirement that _TileWidth and TileLength must be a multiple of 16_.
+The specification argues that this restriction improves performance in some graphics environments
 and enhances compatibility with compression schemes such as JPEG.
 There is no such restriction in the OGC 2D-TMS.
 
@@ -63,22 +60,17 @@ include::recommendations/geotiff_format/recommendation_compression.adoc[]
 include::requirements/requirements_geotiff_overviews.adoc[]
 
 ==== Requirement overviews
-*Reduced-Resolution Subfiles* (a.k.a _Overviews_) are downsampled versions of
- the same image included in the same TIFF file also.
- This means it's a _zoomed out_ version from the original image. It has less detail but it is also smaller.
- For visualization purposes or for analytical processes that do not require full resolution,
- a COG can provided _overviews_, to match different scale denominators or cell sizes required by clients.
- _Reduced-Resolution Subfiles_ increase the size of the file, but increase performance.
+*Reduced-Resolution Subfiles* (a.k.a _Overviews_) are down sampled versions of the same image included in the same TIFF file. This means that an overview is a _zoomed out_ version from the original image. It has less detail but is also smaller. For visualization purposes or for analytical processes that do not require full resolution, a COG can provide _overviews_ that match different scale denominators or cell sizes required by clients. _Reduced-Resolution Subfiles_ increase the size of the file but also increase performance.
 
-NOTE: Some COG descriptions created by the community use the concept of _overviews_. Actually,
+NOTE: The COG description use the concept of _overviews_. Actually,
 there is nothing called _overviews_ in the TIFF version 6.0 specification.
-Instead, the TIFF version 6.0 describes how a TIFF file can be composed by one or more image each one stored in
-an Image File Directories (IFD). Some IFD may contain reduced-resolution subfiles.
+Instead, the TIFF version 6.0 describes how a TIFF file can be composed of one or more image(S), each one stored in
+an Image File Directories (IFD). Some IFDs may contain reduced-resolution subfiles.
 This is the reason why this document uses the expression _Reduced-Resolution Subfile_ instead of _overview_.
 
 There may be more than one IFD in a TIFF file and each IFD indicates
 the offset of the next IFD sits in the file (or 0 if no other IFD is available).
-Each IFD defines a subfile. Having images as subfiles have several applications.
+Each IFD defines a subfile. Having images as subfiles has several applications.
 The SubFileType entry specifies three basic types of subfiles.
 Type 1 means "full-resolution image data" and type 2 means "reduced-resolution image data of the full resolution one".
 
@@ -105,20 +97,21 @@ There is a geometrical relation between the reduced-resolution subfiles and the 
 
 include::requirements/geotiff_keys/keys_georeference.adoc[]
 
-Clients have the option to use geometrical relations between the reduced-resolution subfiles and the corresponding full-resolution subfile.
+Clients have two options to interpret the georeference of the reduced-resolution subfiles:
 
 ==== Requirement No Tile Matrix Set
 All linked reduced-resolution subfiles (a.k.a IFDs SubfileType 2) that are linked
 to a SubfileType 1 IFD share the set of georeference keys from the full resolution IFD. In practice this means that they have a common CRS and extent information, and differ only by their resolution.
-This means that we have to assume that all related subfiles share the same point of origin for the top left corner or the image.
+This means that in absence of any information about a common tile matrix set, there is the assumption that all related subfiles share the same point of origin for the top left corner or the image.
 
 include::requirements/geotiff_keys/point-of-origin.adoc[]
 
-In this case, the pixel size in the first dimension of a reduced-resolution subfile can be calculated by multiplying the full-resolution subfile pixel size by the ImageWidth ratio between the full-resolution and the reduced-resolution.
+The pixel size in the first dimension of a reduced-resolution subfile can be calculated by multiplying the full-resolution subfile pixel size by the ImageWidth ratio between the full-resolution and the reduced-resolution.
 The pixel size in the second dimension of a reduced-resolution subfile can be calculated by multiplying the full-resolution subfile pixel size by the ImageHeight ratio between the full-resolution and the reduced-resolution.
 
-For the IFD reduced-resolution subfiles linked to IFD0,  IFDn_PixelScaleX and IFDn_PixelScaleY can be calculated like this:
+For the IFD reduced-resolution subfiles linked to IFD0, IFDn_PixelScaleX and IFDn_PixelScaleY can be calculated like this:
 
+[%unnumbered]
 ----
 IFDn_PixelScaleX=IFD0_PixelScaleX*IFD0_ImageWidth/IFDn_ImageWidth
 IFDn_PixelScaleY=IFD0_PixelScaleY*IFD0_ImageHeight/IFDn_ImageHeight
@@ -126,8 +119,9 @@ IFDn_PixelScaleY=IFD0_PixelScaleY*IFD0_ImageHeight/IFDn_ImageHeight
 
 For a georeferenced file with a projected CRS that is fully defined in the EPSG database
 there is no need to define the base Geographic CRS, geodetic datum, etc. in the TIFF file.
-In these case, the following keys in the IFD0 are sufficient;
+In these cases, the following keys in the IFD0 are sufficient;
 
+[%unnumbered]
 ----
 ImageWidth = 15829
 ImageHeight = 6520
@@ -139,18 +133,18 @@ GeoKeyDirectoryTag:
 -    ProjectedCRSGeoKey = 32628 (Projected 2D CRS WGS 84 / UTM zone 28N)
 ----
 
-This example corresponds to a Landsat5 mosaic over the Canary islands with a resolution
+This example corresponds to a Landsat5 mosaic over the Canary Islands with a resolution
 of 30 meters per pixel.
 There is a grid intersection line in the image at pixel location (0, 0)
 
-(the 2 first numbers in ModelTiepointTag), that corresponds to
+The 2 first numbers in ModelTiepointTag correspond to
 the projected coordinate reference system easting/northing of (X:187334, Y:3255440)
 (the numbers 4th and 5th in ModelTiepointTag) in the EPSG:32628 (WGS 84 / UTM zone 28N)
 
 The georeference of the reduced-resolution subfiles (a.k.a IFDs SubfileType 2)
-that are linked to this IFD0 are supposed to be the same except ModelPixelScaleTag
-representing the meters per pixel (pixel size).
-In this example, IFD0 has ImageWidth=20111 and ImageHeigth=16882 while IFD1 has ImageWidth=10056 and ImageHeigth=8441, so
-
-IFD1_PixelScaleX and IFD1_PixelScaleY can be calculated as:
-30*20111/10056=59.997 and 30*16882/8441=60. As we can see in the example, non tile Matrix Set based tiles can easily result in a non square pixels; a situation that may complicate presenting or combining this data with other data that has square pixels.
+that are linked to this IFD0 are supposed to be the same except `ModelPixelScaleTag`
+represents meters per pixel (pixel size).
+In this example, IFD0 has `ImageWidth=20111` and `ImageHeigth=16882` while IFD1 has `ImageWidth=10056` and `ImageHeigth=8441`, so
+`IFD1_PixelScaleX` and `IFD1_PixelScaleY` can be calculated as:
+30*20111/10056=59.997 and 30*16882/8441=60.
+As we can see in the example, non-TileMatrixSet based tiles can easily result in non-square-pixels; a situation that may complicate presenting or combining the data with other data that has square pixels.

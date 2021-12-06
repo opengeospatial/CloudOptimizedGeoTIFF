@@ -1,3 +1,4 @@
+[%unnumbered]
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-keys/georeference
