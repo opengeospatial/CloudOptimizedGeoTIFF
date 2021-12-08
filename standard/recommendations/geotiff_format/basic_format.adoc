@@ -2,5 +2,5 @@
 [width="90%",cols="2,6"]
 |===
 |*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-class-geotiff-format/use-geotiff
-| A {set:cellbgcolor:#EEEEEE} | If the resulting COG file is smaller than 4Gb a COG file SHOULD follow the TIFF version 6.0 standard {set:cellbgcolor:#FFFFFF}
+| A {set:cellbgcolor:#EEEEEE} | If the resulting COG file is smaller than 4 GByte a COG file SHOULD follow the TIFF version 6.0 standard {set:cellbgcolor:#FFFFFF}
 |===
