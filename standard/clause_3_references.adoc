@@ -3,14 +3,8 @@ The following normative documents contain provisions that, through reference in 
 
 Adobe development association. TIFF Revision 6.0 Final — June 3, (1992) https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf
 
+Fielding R., Lafonand Y., Reschke J.: Hypertext Transfer Protocol (HTTP/1.1): Range Requests. RFC 7233. Internet Engineering Task Force (IETF). ISSN: 2070-1721 (2014) https://datatracker.ietf.org/doc/html/rfc7233
 
-[NOTE]
-====
-Insert References here. If there are no references, state “There are no normative references”.
+Devys E., Habermann T., Heazel C., Lott R., Rouault E.: OGC GeoTIFF Standard. OGC 19-008r4. (2019) http://docs.opengeospatial.org/is/19-008r4/19-008r4.html
 
-References are to follow the Springer LNCS style, with the exception that optional information may be appended to references: DOIs are added after the date and web resource references may include an access date at the end of the reference in parentheses. See examples from Springer and OGC below.
-
-Smith, T.F., Waterman, M.S.: Identification of Common Molecular Subsequences.
-J. Mol. Biol. 147, 195–197 (1981)
-
-====
+van Damme J.: The BigTIFF File Format. https://www.awaresystems.be/imaging/tiff/bigtiff.html (No normative reference)

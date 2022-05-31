@@ -3,7 +3,7 @@
 A COG file is a TIFF file or a BigTIFF file that uses two main organization techniques available in the TIFF version 6.0 specification:
 Tiling and Reduced-Resolution Subfiles (sometimes called _Overviews_).
 The tiled data can also be compressed for more efficient passage online.
-In addition, a COG file uses the GeoTIFF conventions for storing the relevant geospatial metadata.
+In addition, a COG file uses the GeoTIFF conventions for storing the relevant geospatial metadata. For convenience, tiles and overviews are presented in two independent conformance classes.
 
 === Requirement Class GeoTIFF Tiles
 include::requirements/requirements_geotiff_format.adoc[]
@@ -15,14 +15,14 @@ include::requirements/geotiff_format/basic_format.adoc[]
 include::recommendations/geotiff_format/basic_format.adoc[]
 
 ==== Tiles
-In the context for a TIFF file, *Tiling* is a strategy for dividing the content in the TIFF file differently than using the classical _Strips_. In the _Strips_ approach the data are organized into sequences of lines (rows) while *tiling* creates a number of internal _tiles_ stored in the actual image. In *Tiling* the information related to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually, with  _strips_ all data from the previous rows needs to be read to get to the following rows.
+In the context for a TIFF file, *Tiling* is a strategy for dividing the content in the TIFF file differently than using the classical _Strips_. In the _Strips_ approach the data are organized into sequences of lines (rows) while *tiling* creates a number of internal rectangular _tiles_ stored in the actual image. In *Tiling* the information related to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually, with  _strips_ all data from the previous rows needs to be read to get to the following rows.
 With *tiling*, a much quicker access to a certain area is possible so that the portion of the file that needs to be read can be adjusted to better match the application needs.
 
 include::requirements/geotiff_format/tiling.adoc[]
 
-NOTE: The concept Image File Directories (IFD) becomes important when the COG has also _overviews_. See the next requirements class for more details.
+NOTE: The ability to have multiple Image File Directories (IFD) becomes important when the COG has also _overviews_. See the next requirements class for more details.
 
-Tiles as defined in the TIFF version 6.0 specification can be mapped to the ones defined in the OGC Two Dimensional Tile Matrix Set Standard (2S-TMS).
+Tiles, as defined in the TIFF version 6.0 specification, can be mapped to the ones defined in the OGC Two Dimensional Tile Matrix Set Standard (2S-TMS).
 For example in 2D-TMS, the TIFF 6.0 forces all tiles to be of the same size.
 This is possible with the introduction of the concept of padding:
 If necessary extra blank rows or columns added to the right-most and bottom-most tile of the to make them of the same shape as other tiles.
@@ -54,6 +54,17 @@ HTTP GET Range will be standardized in another requirements class.
 
 include::recommendations/geotiff_format/recommendation_compression.adoc[]
 
+==== Planar Configuration considerations
+
+When more than component is encoded in a TIFF file, the TIFF provides two possibilities:
+
+* The component values for each pixel are stored contiguously. This is marked in the file as PlanarConfiguration=Contig (a.k.a. Chunky format, value 1). This is a common arrangement for RGB combinations of bands. The data is stored as RGBRGBRGB… (this arrangement is also known as Band Interleaved by Pixel, BIP)
+* The components are stored in separate _component planes_. This is marked in the file as PlanarConfiguration=Separate (a.k.a. Planar format, value 2). This is the common arrangement for the bands of a multispectral image (this arrangement is also known as Band Sequential, BSQ).
+
+NOTE: (extracted from the TIFF 6.0 specification) PlanarConfiguration=2 is not currently [written in 1992] in widespread use and it is not recommended for general interchange.
+
+Following this note, most common implementations of the COG encoders (e.g. GDAL) use PlanarConfiguration=1 (see https://gdal.org/drivers/raster/cog.html#high-level).
+
 [[GeoTIFFOverviewsRequirements]]
 === Requirement Class GeoTIFF Overviews
 
@@ -64,9 +75,9 @@ include::requirements/requirements_geotiff_overviews.adoc[]
 
 NOTE: The COG description use the concept of _overviews_. Actually,
 there is nothing called _overviews_ in the TIFF version 6.0 specification.
-Instead, the TIFF version 6.0 describes how a TIFF file can be composed of one or more image(S), each one stored in
+Instead, the TIFF version 6.0 describes how a TIFF file can be composed of one or more images, each one stored in
 an Image File Directories (IFD). Some IFDs may contain reduced-resolution subfiles.
-This is the reason why this document uses the expression _Reduced-Resolution Subfile_ instead of _overview_.
+This is the reason why this standard favors the use of the expression _Reduced-Resolution Subfile_ instead of _overview_.
 
 There may be more than one IFD in a TIFF file and each IFD indicates
 the offset of the next IFD sits in the file (or 0 if no other IFD is available).
@@ -78,7 +89,9 @@ include::requirements/geotiff_overviews/overviews.adoc[]
 
 NOTE: The presence of reduced-resolution subfiles in a COG file is optional. Only the COG files that conform to this conformance class are forced to have reduced-resolution subfiles.
 
-NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be followed by its reduced-resolution subfiles.
+include::recommendations/geotiff_overviews/ifd_order.adoc[]
+
+NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be contiguous to its reduced-resolution subfiles and their IFDs.
 
 [[GeoTIFFKeysRequirements]]
 === Requirement Class GeoTIFF Keys
@@ -97,12 +110,9 @@ There is a geometrical relation between the reduced-resolution subfiles and the 
 
 include::requirements/geotiff_keys/keys_georeference.adoc[]
 
-Clients have two options to interpret the georeference of the reduced-resolution subfiles:
-
-==== Requirement No Tile Matrix Set
 All linked reduced-resolution subfiles (a.k.a IFDs SubfileType 2) that are linked
 to a SubfileType 1 IFD share the set of georeference keys from the full resolution IFD. In practice this means that they have a common CRS and extent information, and differ only by their resolution.
-This means that in absence of any information about a common tile matrix set, there is the assumption that all related subfiles share the same point of origin for the top left corner or the image.
+This means that there is the assumption that all related subfiles share the same point of origin for the top left corner or the image.
 
 include::requirements/geotiff_keys/point-of-origin.adoc[]
 
@@ -133,7 +143,7 @@ GeoKeyDirectoryTag:
 -    ProjectedCRSGeoKey = 32628 (Projected 2D CRS WGS 84 / UTM zone 28N)
 ----
 
-This example corresponds to a Landsat5 mosaic over the Canary Islands with a resolution
+This example corresponds to a imagery over the Canary Islands with a resolution
 of 30 meters per pixel.
 There is a grid intersection line in the image at pixel location (0, 0)
 
@@ -147,4 +157,5 @@ represents meters per pixel (pixel size).
 In this example, IFD0 has `ImageWidth=20111` and `ImageHeigth=16882` while IFD1 has `ImageWidth=10056` and `ImageHeigth=8441`, so
 `IFD1_PixelScaleX` and `IFD1_PixelScaleY` can be calculated as:
 30*20111/10056=59.997 and 30*16882/8441=60.
-As we can see in the example, non-TileMatrixSet based tiles can easily result in non-square-pixels; a situation that may complicate presenting or combining the data with other data that has square pixels.
+
+As we can see in the example, tiles can easily result in non-square-pixels; a situation that should be handled by clients combining the data with other imagery that have square pixels.
