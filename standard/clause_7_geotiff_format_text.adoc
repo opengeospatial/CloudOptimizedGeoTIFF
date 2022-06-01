@@ -111,8 +111,8 @@ There is a geometrical relation between the reduced-resolution subfiles and the 
 
 include::requirements/geotiff_keys/keys_georeference.adoc[]
 
-All linked reduced-resolution subfiles (a.k.a IFDs SubfileType 2) that are linked
-to a SubfileType 1 IFD share the set of georeference keys from the full resolution IFD. In practice this means that they have a common CRS and extent information, and differ only by their resolution.
+All linked reduced-resolution subfiles (a.k.a IFDs whose bit 0 of the value of the NewSubfileType tag is set) that are linked
+to a full resolution IFD (i.e. an IFD whose bit 0 of the value of the NewSubfileType tag is *not* set, or NewSubfileType absent) share the set of georeference keys from the full resolution IFD. In practice this means that they have a common CRS and extent information, and differ only by their resolution.
 This means that there is the assumption that all related subfiles share the same point of origin for the top left corner or the image.
 
 include::requirements/geotiff_keys/point-of-origin.adoc[]
@@ -152,7 +152,7 @@ The 2 first numbers in ModelTiepointTag correspond to
 the projected coordinate reference system easting/northing of (X:187334, Y:3255440)
 (the numbers 4th and 5th in ModelTiepointTag) in the EPSG:32628 (WGS 84 / UTM zone 28N)
 
-The georeference of the reduced-resolution subfiles (a.k.a IFDs SubfileType 2)
+The georeference of the reduced-resolution subfiles (a.k.a IFDs whose bit 0 of the value of the NewSubfileType tag is set)
 that are linked to this IFD0 are supposed to be the same except `ModelPixelScaleTag`
 represents meters per pixel (pixel size).
 In this example, IFD0 has `ImageWidth=20111` and `ImageHeigth=16882` while IFD1 has `ImageWidth=10056` and `ImageHeigth=8441`, so
