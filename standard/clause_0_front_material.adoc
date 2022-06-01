@@ -26,6 +26,7 @@ NOTE: The security measures discussed in the following sections only allow vario
 The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
 
 * UAB-CREAF
+* Planet Labs PBC
 
 [big]*vi.     Submitters*
 
@@ -34,4 +35,5 @@ All questions regarding this submission should be directed to the editor or the 
 |===
 |*Name* |*Affiliation*
 | Joan Maso | UAB-CREAF
+| Quinn Scripter | Planet Labs PBC
 |===
