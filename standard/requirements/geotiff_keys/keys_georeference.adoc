@@ -2,5 +2,6 @@
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-keys/georeference
-| A {set:cellbgcolor:#EEEEEE} | In a COG file, the IFD Subfiles Type 1 SHALL contain georeference data using ModelTiepointTag, ModelPixelScaleTag and GeoKeyDirectoryTag tags. {set:cellbgcolor:#FFFFFF}
+| A {set:cellbgcolor:#EEEEEE} | In a COG file, the IFD Subfiles of full resolution (a.k.a IFDs whose bit 0 of the value of the NewSubfileType tag is *not* set, or NewSubfileType absent) SHALL contain georeference data using ModelTiepointTag, ModelPixelScaleTag and GeoKeyDirectoryTag tags. {set:cellbgcolor:#FFFFFF}
 |===
+ 
