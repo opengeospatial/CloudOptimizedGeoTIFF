@@ -4,7 +4,7 @@
 
 This folder contains the text for the standard
 
-* standard_document.adoc - the main standard document with references to all sections
+* 21-026.adoc - the main standard document with references to all sections
 * remaining adocs - each section of the standard document is in a separate document: follow directions in each document to populate
 * figures - figures go here
 * images - Image files for graphics go here. Image files for figures go in the "figures" directory. Only place in here images not used in figures (e.g., as parts of tables, as logos, etc.)
@@ -16,7 +16,7 @@ This folder contains the text for the standard
 ## Building
 
 To produce the HTML of the standard run `asciidoctor --safe -a data-uri -o
-standard_document.html standard_document.adoc`.
+21-026.html 21-026.adoc`.
 
 To produce the PDF of the standard run `asciidoctor-pdf --safe -o
-standard_document.pdf standard_document.adoc`
+21-026.pdf 21-026.adoc`
