@@ -37,4 +37,5 @@ All questions regarding this submission should be directed to the editor or the 
 | Joan Maso | UAB-CREAF
 | Quinn Scripter | Planet Labs PBC
 | Even Rouault | Spatialys
+| Vincent Sarago | Development Seed
 |===
