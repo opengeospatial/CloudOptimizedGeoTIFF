@@ -1,0 +1,17 @@
+{
+        "1": {
+                "OGC_doc_number": "21-026",
+                "urn":"http://www.opengis.net/doc/IS/cog-1/21-026.adoc",
+                "title":"OGC Cloud Optimized GeoTIFF standard",
+                "path":"standard/21-026.adoc",
+                "options": ["--trace"],
+                "a":[
+                        "data-uri",
+                        "stylesdir=./resources/stylesheets",
+                        "dot=/usr/bin/dot"
+                ],
+                "r":[
+                        "asciidoctor-diagram"
+                ]
+        }
+}
