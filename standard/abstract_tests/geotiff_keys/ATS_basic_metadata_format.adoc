@@ -1,0 +1,11 @@
+[[ats_geotiff-format-basic-metadata-format]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:ats-id}* |/conf/geotiff-format/basic-metadata-format
+| Test Purpose | Validate that a COG file includes and encodes geospatial metadata following the GeoTIFF standard
+| Requirement | <<req_geotiff-format-basic-metadata-format>>
+| Test method | Validate the requirements of GeoTIFF metadata
+
+Test passes if geospatial metadata following the GeoTIFF standard is found on the COG file
+
+|===

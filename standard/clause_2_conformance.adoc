@@ -1,19 +1,19 @@
 == Conformance
 This Standard defines 4 conformance classes.
 
-*<<GeoTIFFFormatRequirements>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format)
+*<<geotiff-format-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format)
 
 Defines what characteristics of the TIFF (or BigTIFF) format should be used. Target: TIFF Encoders (and COG clients)
 
-*<<GeoTIFFOverviewsRequirements>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-overviews)
+*<<geotiff-overviews-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-overviews)
 
 Defines the overview characteristics of the TIFF (or BigTIFF) format that should be used. Target: TIFF Encoders (and COG clients)
 
-*<<HTTPRangeSupportRequirements>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-http-range)
+*<<geotiff-keys-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-http-range)
 
 Defines how to use COG in the web to download only a fragment of the data. Target: A web Server (and COG web clients)
 
-*<<GeoTIFFKeysRequirements>>* http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys
+*<<http-range-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys
 
 Defines how to GeoKeys to georeference the data. Target: GeoTIFF encoders
 

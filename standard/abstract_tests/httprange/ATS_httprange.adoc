@@ -1,0 +1,10 @@
+[[ats_http-range-use-range]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:ats-id}* |/conf/http-range/use-range
+| Test Purpose | Validate that a server supports HTTP range
+| Requirement | <<req_http-range-use-range>>
+| Test method | Validate the requirements of the HTTP range
+
+Test passes if an HTTP or HTTPS server supports HTTP range and uses byte ranges.
+|===

@@ -1,0 +1,15 @@
+[[ats_geotiff-format]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/COG/1.0/conf/geotiff-format
+|Target type |TIFF Encoder
+|Requirements class |<<geotiff-format-requirements-class,GeoTIFF Tiles>>
+|===
+
+==== Basic format
+include::geotiff_format/ATS_basic_format.adoc[]
+
+==== Tiles
+
+include::geotiff_format/ATS_tiling.adoc[]

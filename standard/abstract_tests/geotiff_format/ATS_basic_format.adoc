@@ -1,0 +1,10 @@
+[[ats_geotiff-format-use-geotiff]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:ats-id}* |/conf/geotiff-format/use-geotiff
+| Test Purpose | Validate that a COG file bigger than 4 GByte follows the BigTIFF standard
+| Requirement | <<req_geotiff-format-use-geotiff>>
+| Test method | Validate the requirements of the BiGTIFF
+
+Test passes if a COG file bigger than 4 GByte follows the BigTIFF standard
+|===

@@ -5,5 +5,6 @@
 [width="90%",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description
-|2016-04-28 |0.1 |G. Editor |all |initial version
+|2021-10-26 |0.1 |Joan Masó |all |initial version from parts of OGC 21-025
+|2022-06-01 |0.2 |Joan Masó |all |First complete version including ATS
 |===

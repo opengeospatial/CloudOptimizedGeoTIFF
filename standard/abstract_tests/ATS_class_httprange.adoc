@@ -1,0 +1,14 @@
+[[ats_http-range]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/COG/1.0/conf/http-range
+|Target type |Web server
+|Requirements class |<<http-range-requirements-class,HTTP range>>
+|===
+
+==== Range
+
+include::httprange/ATS_httprange.adoc[]
+
+include::httprange/ATS_httpsrange.adoc[]

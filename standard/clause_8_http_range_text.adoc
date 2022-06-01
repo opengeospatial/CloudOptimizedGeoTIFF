@@ -6,6 +6,7 @@ The client can request just the bytes that it needs from the server at any time.
 Herein this use case, this is useful to get only the tiles needed at a particular time. This is done by getting the headers and IFDs of this TIFF file first and using this information to determine the conversion between tile indices to byte ranges.
 A client trying to show a COG file on the screen can request the resolutions needed and only the tiles needed to cover the screen. Once the user moves or pans, other GET range requests will get the new needed resolutions and tiles.
 
+[[http-range-requirements-class]]
 === Requirement Class HTTP range
 
 include::requirements/requirements_httprange.adoc[]

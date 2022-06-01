@@ -1,0 +1,18 @@
+[[ats_geotiff-keys]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/COG/1.0/conf/geotiff-keys
+|Target type |GeoTIFF Encoder
+|Requirements class |<<geotiff-keys-requirements-class,GeoTIFF Keys>>
+|===
+
+==== GeoTIFF
+
+include::geotiff_keys/ATS_basic_metadata_format.adoc[]
+
+==== Georeference Keys
+
+include::geotiff_keys/ATS_keys_georeference.adoc[]
+
+include::geotiff_keys/ATS_point-of-origin.adoc[]

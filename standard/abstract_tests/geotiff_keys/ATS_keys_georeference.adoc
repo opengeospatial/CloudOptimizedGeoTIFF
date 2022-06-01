@@ -1,0 +1,11 @@
+[[ats_geotiff-keys-georeference]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:ats-id}* |/conf/geotiff-keys/georeference
+| Test Purpose | Validate that a COG file contains georeference data using ModelTiepointTag, ModelPixelScaleTag and GeoKeyDirectoryTag tags in the IFD Subfiles Type 1
+| Requirement |<<req_geotiff-keys-georeference>>
+| Test method | Validate the requirements of georeference
+
+Test passes if georeference data using ModelTiepointTag, ModelPixelScaleTag and GeoKeyDirectoryTag tags is found in the IFD Subfiles Type 1 of the COG file
+
+|===

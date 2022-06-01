@@ -1,0 +1,12 @@
+[[ats_geotiff-overviews]]
+[cols="1,4",width="90%"]
+|===
+2+|*Conformance Class*
+2+|http://www.opengis.net/spec/COG/1.0/conf/geotiff-overviews
+|Target type |TIFF Encoder
+|Requirements class |<<geotiff-overviews-requirements-class,GeoTIFF Overviews>>
+|===
+
+==== Overviews
+
+include::geotiff_overviews/ATS_overviews.adoc[]

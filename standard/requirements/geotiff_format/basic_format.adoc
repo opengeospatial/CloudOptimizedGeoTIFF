@@ -1,4 +1,4 @@
-[%unnumbered]
+[[req_geotiff-format-use-geotiff]]
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-format/use-geotiff

@@ -1,0 +1,10 @@
+[[ats_geotiff-overviews-overviews]]
+[cols=">20h,<80d",width="100%"]
+|===
+|*Abstract Test {counter:ats-id}* |/conf/geotiff-overviews/overviews
+| Test Purpose | Validate that a COG file contains the full resolution image as well as the reduced resolution images
+| Requirement | <<req_geotiff-overviews-overviews>>
+| Test method | Validate the requirements of overviews
+
+Test passes if at least one IFD with SubfileType 1 (full-resolution image data) is present in the COG file and an the IFD with SubfileType 1 has an offset to an IFD with SubfileType 2 (reduced-resolution image data), or 0 if there is no reduced-resolution image and all the IFD with SubfileType 2 have an Image Width an Image Height inferior than the previous IFD.
+|===
