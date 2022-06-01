@@ -36,4 +36,5 @@ All questions regarding this submission should be directed to the editor or the 
 |*Name* |*Affiliation*
 | Joan Maso | UAB-CREAF
 | Quinn Scripter | Planet Labs PBC
+| Even Rouault | Spatialys
 |===
