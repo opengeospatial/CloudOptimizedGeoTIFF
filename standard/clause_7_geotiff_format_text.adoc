@@ -1,9 +1,9 @@
 [[GeoTIFFFormatRequirements]]
 == GeoTIFF format requirements
-A COG file is a TIFF file or a BigTIFF file that uses two main organization techniques available in the TIFF version 6.0 specification:
+A COG file is a file that conforms to a subset of the TIFF specification (or the BigTIFF specification) and adheres to the GeoTIFF tag requirements. A COG uses two main organization techniques available in the TIFF version 6.0 specification:
 Tiling and Reduced-Resolution Subfiles (sometimes called _Overviews_).
 The tiled data can also be compressed for more efficient passage online.
-In addition, a COG file uses the GeoTIFF conventions for storing the relevant geospatial metadata. For convenience, tiles and overviews are presented in two independent conformance classes.
+In addition, a COG file uses the GeoTIFF conventions for storing the relevant geospatial metadata. For convenience, Tiling and Reduced-Resolution Subfiles are presented in two independent conformance classes.
 
 [[geotiff-format-requirements-class]]
 === Requirement Class GeoTIFF Tiles
@@ -71,28 +71,28 @@ Following this note, most common implementations of the COG encoders (e.g. GDAL)
 
 include::requirements/requirements_geotiff_overviews.adoc[]
 
-==== Requirement overviews
-*Reduced-Resolution Subfiles* (a.k.a _Overviews_) are down sampled versions of the same image included in the same TIFF file. This means that an overview is a _zoomed out_ version from the original image. It has less detail but is also smaller. For visualization purposes or for analytical processes that do not require full resolution, a COG can provide _overviews_ that match different scale denominators or cell sizes required by clients. _Reduced-Resolution Subfiles_ increase the size of the file but also increase performance.
+==== Requirement Reduced-Resolution Subfiles
+*Reduced-Resolution Subfiles* (a.k.a _Overviews_) are down sampled versions of the same image included in the same TIFF file. This means that an overview is a _zoomed out_ version from the original image. It has less detail but is also smaller. For visualization purposes or for analytical processes that do not require full resolution, a COG can provide _Reduced-Resolution Subfiles_ that match different scale denominators or cell sizes required by clients. _Reduced-Resolution Subfiles_ increase the size of the file but also increase performance.
 
-NOTE: The COG description use the concept of _overviews_. Actually,
+NOTE: The general description of the COG use the concept of _overviews_. Actually,
 there is nothing called _overviews_ in the TIFF version 6.0 specification.
 Instead, the TIFF version 6.0 describes how a TIFF file can be composed of one or more images, each one stored in
 an Image File Directories (IFD). Some IFDs may contain reduced-resolution subfiles.
-This is the reason why this standard favors the use of the expression _Reduced-Resolution Subfile_ instead of _overview_.
+This is the reason why this standard favors the use of the expression _Reduced-Resolution Subfiles_ to talk about _overviews_.
 
 There may be more than one IFD in a TIFF file and each IFD indicates
 the offset of the next IFD sits in the file (or 0 if no other IFD is available).
 Each IFD defines a subfile. Having images as subfiles has several applications.
 The SubFileType entry specifies three basic types of subfiles.
-Type 1 means "full-resolution image data" and type 2 means "reduced-resolution image data of the full resolution one".
+Type 1 means _full-resolution image data_ and type 2 means _reduced-resolution image data of the full resolution one_.
 
 include::requirements/geotiff_overviews/overviews.adoc[]
 
-NOTE: The presence of reduced-resolution subfiles in a COG file is optional. Only the COG files that conform to this conformance class are forced to have reduced-resolution subfiles.
+NOTE: The presence of _reduced-resolution subfiles_ in a COG file is optional. Only the COG files that conform to this conformance class are forced to have _reduced-resolution subfiles_.
 
 include::recommendations/geotiff_overviews/ifd_order.adoc[]
 
-NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be contiguous to its reduced-resolution subfiles and their IFDs.
+NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be contiguous to its _reduced-resolution subfiles_ and their IFDs.
 
 [[geotiff-keys-requirements-class]]
 === Requirement Class GeoTIFF Keys

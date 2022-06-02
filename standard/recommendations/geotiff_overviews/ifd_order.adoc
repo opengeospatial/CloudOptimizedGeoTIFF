@@ -8,23 +8,23 @@
 
 2. IFD of the mask of the full resolution image, if present, followed by TIFF tags values, excluding the TileOffsets and TileByteCounts arrays.
 
-3. IFD of the first (largest in dimensions) overview level, if present
+3. IFD of the first (largest in dimensions) Reduced-Resolution Subfile, if present
 
-4. …
+4. ...
 
-5. IFD of the last (smallest) overview level, if present
+5. IFD of the last (smallest) Reduced-Resolution Subfile, if present
 
-6. IFD of the first (largest in dimensions) overview level of the mask, if present
+6. IFD of the first (largest in dimensions) Reduced-Resolution Subfile of the mask, if present
 
-7. …
+7. ...
 
-8. IFD of the last (smallest) overview level of the mask, if present TileOffsets and TileByteCounts arrays of the above IFDs
+8. IFD of the last (smallest) Reduced-Resolution Subfile of the mask, if present TileOffsets and TileByteCounts arrays of the above IFDs
 
-9. tile data of the smallest overview, if present (with each tile followed by the corresponding tile of mask data, if present), with leader and trailer bytes
+9. tile data of the smallest Reduced-Resolution Subfile, if present (with each tile followed by the corresponding tile of mask data, if present), with leader and trailer bytes
 
-10. …
+10. ...
 
-11. tile data of the largest overview, if present (interleaved with mask data if present)
+11. tile data of the largest Reduced-Resolution Subfile, if present (interleaved with mask data if present)
 
 12. tile data of the full resolution image, if present (interleaved with corresponding mask data if present)
 |===

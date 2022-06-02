@@ -22,6 +22,8 @@ standard for storing georeference and geocoding information in a TIFF 6.0 compli
 
 downsampled versions of the same image.
 
+NOTE: There is no mention of the term _overview_ in the TIFF v6 specification. This standard favors the use of the expression Reduced-Resolution Subfile to talk about an _overview_
+
 4.3. tag::
 
 packet of numerical or ASCII values, which have a numerical TIFF "Tag" identifier indicating their information content
