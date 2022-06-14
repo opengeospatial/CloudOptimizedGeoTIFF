@@ -37,8 +37,8 @@ The following table provides a mapping between the two standards.
 | OGC 2D-TMS | TIFF v. 6.0 | Definition
 | TileWidth | TileWidth | The tile width in pixels. The number of columns in each tile
 | TileHeight | TileLength | The tile height in pixels. The number of rows in each tile
-| MatrixWidth | TilesAcross | Number of tiles in width direction
-| MatrixHeight | TilesDown | Number of files in the height direction
+| MatrixWidth | TilesAcross | Number of tiles in the width direction
+| MatrixHeight | TilesDown | Number of tiles in the height direction
 |===
 
 Please note that the TIFF 6.0 specification

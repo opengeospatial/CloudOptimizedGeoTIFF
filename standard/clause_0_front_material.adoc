@@ -11,6 +11,7 @@ The following are keywords to be used by search engines and document catalogues.
 ogcdoc, OGC document, Cloud, GeoTIFF, Imagery, Web
 
 [big]*iii.   Preface*
+
 COG was previously defined by a community of users with the intention of improving the distribution of remote sensing images on the cloud. This document respects the decisions taken and conventios addopted by the community and formalizes them in standard requirements and recommendations. The standard name still reflects this original purpose: a format optimized for the cloud. The similar principles are applied to other emerging formats such as Zarr (https://zarr.readthedocs.io/en/stable/) and the Cloud Optimized Point Cloud (https://copc.io/).
 
 This document depends on the TIFF specification and the GeoTIFF standard. For big files, it may depend on the BigTIFF community standard. The standard takes advantage of some existing characteristics of the TIFF specification and the existing HTTP range specification and does not modify them in anyway.
@@ -27,6 +28,8 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 * UAB-CREAF
 * Planet Labs PBC
+* Spatialys
+* Development Seed
 
 [big]*vi.     Submitters*
 
