@@ -83,7 +83,7 @@ This is the reason why this standard favors the use of the expression _Reduced-R
 There may be more than one IFD in a TIFF file and each IFD indicates
 the offset of the next IFD sits in the file (or 0 if no other IFD is available).
 Each IFD defines a subfile. Having images as subfiles has several applications.
-The NewSubfileType entry specifies several types of subfiles, among with we distinguish:
+The NewSubfileType entry specifies several types of subfiles, among which we distinguish:
 - IFD with a NewSubfileType tag whose bit 0 is *not* set, or without a NewSubfileType tag, to mean a _full-resolution image data_
 - IFD with a NewSubfileType tag whose bit 0 is set, to mean a _reduced-resolution image data of the full resolution one_.
 
