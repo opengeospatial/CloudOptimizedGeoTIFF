@@ -6,6 +6,6 @@
 |Target type |Web server
 |Dependency |https://datatracker.ietf.org/doc/html/rfc7233
 |Dependency |http://www.opengis.net/spec/GeoTIFF/1.1/req/Core
-|Dependency |https://www.adobe.io/content/dam/udp/en/open/standards/tiff/TIFF6.pdf
+|Dependency |https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf
 |Dependency |bigtiff.org
 |===
