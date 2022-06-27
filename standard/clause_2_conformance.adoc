@@ -15,7 +15,7 @@ Defines how to use COG in the web to download only a fragment of the data. Targe
 
 *<<http-range-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys
 
-Defines how to GeoKeys to georeference the data. Target: GeoTIFF encoders
+Defines how to use GeoKeys to georeference the data. Target: GeoTIFF encoders
 
 Conformance with this Standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 
@@ -24,4 +24,4 @@ In order to conform to this OGC Standard, a software implementation shall choose
 
 All requirements-classes and conformance-classes described in this document are owned by the Standard(s) identified.
 
-NOTE: Currently there is no way to list the conformance classes that a GeoTIFF file conforms so the COG is not specifying how to do so.
+NOTE: Currently there is no way to list the conformance classes that a GeoTIFF file conforms to, so the COG is not specifying how to do so.
