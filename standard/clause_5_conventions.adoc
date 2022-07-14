@@ -7,7 +7,7 @@ This section provides details and examples for any conventions used in the docum
 BigTIFF:: Big Tagged Image File Format
 COG:: Cloud Optimized GeoTIFF
 CORS:: Cross-Origin Resource Sharing
-EPSG:: European Petroleum Survey Group
+EPSG:: Registry of CRS descriptions maintained by the International Association of Oil and Gas Producers (IOGP) formerly known as the "European Petroleum Survey Group (EPSG)" and currently used only as an acronym
 HTTP:: Hypertext Transfer Protocol
 HTTPS:: Hypertext Transfer Protocol Secure
 IFD:: Image File Directory
