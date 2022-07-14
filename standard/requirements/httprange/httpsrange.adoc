@@ -2,6 +2,6 @@
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-http-range/https-headers
-| A {set:cellbgcolor:#EEEEEE} | A HTTPS server serving COG files shall advertise that allows access control for ranges by adding this line in the headers Access-Control-Allow-Headers: range
+| A {set:cellbgcolor:#EEEEEE} | A HTTPS server serving COG files shall advertise that it allows access control for ranges by adding this line in the headers Access-Control-Allow-Headers: range
  {set:cellbgcolor:#FFFFFF}
 |===
