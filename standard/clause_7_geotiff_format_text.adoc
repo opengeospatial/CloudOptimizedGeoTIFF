@@ -23,10 +23,10 @@ include::requirements/geotiff_format/tiling.adoc[]
 
 NOTE: The ability to have multiple Image File Directories (IFD) becomes important when the COG has also _overviews_. See the next requirements class for more details.
 
-Tiles, as defined in the TIFF version 6.0 specification, can be mapped to the ones defined in the OGC Two Dimensional Tile Matrix Set Standard (2S-TMS).
+Tiles, as defined in the TIFF version 6.0 specification, can be mapped to the ones defined in the OGC Two Dimensional Tile Matrix Set Standard (2D-TMS).
 For example in 2D-TMS, the TIFF 6.0 forces all tiles to be of the same size.
 This is possible with the introduction of the concept of padding:
-If necessary extra blank rows or columns added to the right-most and bottom-most tile of the to make them of the same shape as other tiles.
+If necessary extra blank rows or columns are added to the right-most and bottom-most tile to make them the same shape as other tiles.
 However, the naming of the TIFF tags used version 6.0 and the property names used in the 2D-TMS differ.
 The following table provides a mapping between the two standards.
 
@@ -145,7 +145,7 @@ GeoKeyDirectoryTag:
 -    ProjectedCRSGeoKey = 32628 (Projected 2D CRS WGS 84 / UTM zone 28N)
 ----
 
-This example corresponds to a imagery over the Canary Islands with a resolution
+This example corresponds to imagery over the Canary Islands with a resolution
 of 30 meters per pixel.
 There is a grid intersection line in the image at pixel location (0, 0)
 
