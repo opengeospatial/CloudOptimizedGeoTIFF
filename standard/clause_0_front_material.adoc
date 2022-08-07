@@ -12,15 +12,17 @@ ogcdoc, OGC document, Cloud, GeoTIFF, Imagery, Web
 
 [big]*iii.   Preface*
 
-COG was previously defined by a community of users with the intention of improving the distribution of remote sensing images on the cloud. This document respects the decisions taken and conventions addopted by the community and formalizes them in standard requirements and recommendations. The standard name still reflects this original purpose: a format optimized for the cloud.  Similar principles are applied to other emerging formats such as Zarr (https://zarr.readthedocs.io/en/stable/) and Cloud Optimized Point Cloud (https://copc.io/).
+COG was previously defined by a community of users with the intention of improving the distribution of remote sensing images on the cloud. This document respects the decisions taken and conventions adopted by the community and formalizes them in standard requirements and recommendations. The standard name still reflects this original purpose: a format optimized for the cloud.  Similar principles are applied to other emerging formats such as Zarr (https://zarr.readthedocs.io/en/stable/) and Cloud Optimized Point Cloud (https://copc.io/).
 
 This document depends on the TIFF specification and the GeoTIFF standard. For big files, it may depend on the BigTIFF community standard. The standard takes advantage of some existing characteristics of the TIFF specification and the existing HTTP range specification and does not modify them in anyway.
 
 [big]*iv.    Security Considerations*
 
-COG has a requirements class that requires HTTP range. Attention has been made to allow also secure variants of HTTP such as HTTPS. Considerations to support Cross Origin Resource Sharing (CORS) are done in the document. In particular, servers are encouraged to advertise the support for HTTP ranges in the Control-Allow-Headers header.
+Could Optimized GeoTIFF mainly describes a data format. Security considerations for implementations utilizing Could Optimized GeoTIFF are in the domain of the implementing application, deployment platform, operating system, networking environment and web browsers.
 
-NOTE: The security measures discussed in the following sections only allow various kinds of authentication under HTTPS. HTTPS only provides confidentiality or encryption at the protocol level. No confidentiality or encryption at the data level is provided at all.
+In general, the Could Optimized GeoTIFF standard does not place constraints on application, platform, operating system level, network or web browser security. However, this standard has a requirements class that requires "HTTP range". Attention has been made to also allow secure variants of HTTP such as HTTPS and still be able to mix data from different origins in web browsers using HTTP range. In that respect, considerations to support Cross Origin Resource Sharing (CORS) are done in the document. In particular, servers are encouraged to advertise the support for HTTP ranges in the Control-Allow-Headers header to allow for HTTPS CORS.
+
+NOTE: The security measures discussed in the following sections only allow various kinds of authentication under HTTPS. HTTPS only provides confidentiality or encryption at the protocol level. Confidentiality or encryption at the data level is not discussed by this standard.
 
 [big]*v.    Submitting organizations*
 
