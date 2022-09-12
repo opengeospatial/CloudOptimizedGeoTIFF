@@ -135,8 +135,8 @@ In these cases, the following keys in the IFD0 are sufficient;
 
 [%unnumbered]
 ----
-ImageWidth = 15829
-ImageHeight = 6520
+ImageWidth = 20111
+ImageHeight = 16882
 ModelTiepointTag = (0 0 0 187334 3255440 0)
 ModelPixelScaleTag = (30 30 0)
 GeoKeyDirectoryTag:
