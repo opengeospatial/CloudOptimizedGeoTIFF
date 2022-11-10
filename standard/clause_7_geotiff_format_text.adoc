@@ -57,7 +57,7 @@ include::recommendations/geotiff_format/recommendation_compression.adoc[]
 
 ==== Planar Configuration considerations
 
-When more than component is encoded in a TIFF file, the TIFF provides two possibilities:
+When more than one component is encoded in a TIFF file, the TIFF provides two possibilities:
 
 * The component values for each pixel are stored contiguously. This is marked in the file as PlanarConfiguration=Contig (a.k.a. Chunky format, value 1). This is a common arrangement for RGB combinations of bands. The data is stored as RGBRGBRGB… (this arrangement is also known as Band Interleaved by Pixel, BIP)
 * The components are stored in separate _component planes_. This is marked in the file as PlanarConfiguration=Separate (a.k.a. Planar format, value 2). This is the common arrangement for the bands of a multispectral image (this arrangement is also known as Band Sequential, BSQ).
