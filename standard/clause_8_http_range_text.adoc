@@ -15,7 +15,7 @@ include::requirements/requirements_httprange.adoc[]
 
 include::requirements/httprange/httprange.adoc[]
 
-The use of range in web browsers using HTTPS is restricted by the Cross-Origin Resource Sharing (CORS) rules (read ore about this here: https://support.streamroot.io/hc/en-us/articles/115003168773-Range-request-basics). If the client and the server are in different domains (e.g. by using a generic COG enabled web map client requesting external COG files) servers have to explicitly declare
+The use of range in web browsers using HTTPS is restricted by the Cross-Origin Resource Sharing (CORS) rules (read more about this here: https://support.streamroot.io/hc/en-us/articles/115003168773-Range-request-basics). If the client and the server are in different domains (e.g. by using a generic COG enabled web map client requesting external COG files) servers have to explicitly declare
 that they allow the "range" header from a client that is not in the same domain.
 Since this is a very common use case in geospatial data sharing
 the decision was to make this a requirement.
@@ -27,5 +27,5 @@ A server that wants to authorize a client application from another domain
 (under the CORS rules) should also use the Access-Control-Allow-Origin: header
 to indicate what domains are authorized to read the COG file
 (or use * to indicate that all domains are authorized).
-Services that wants to comply about the geospatial data sharing principles should be willing to allow other clients reading the data even if they are in other domains.
+Services that want to comply about the geospatial data sharing principles should be willing to allow other clients reading the data even if they are in other domains.
 However, this is a voluntary decision of the server implementers.

@@ -1,6 +1,6 @@
 [big]*i.     Abstract*
 
-The Cloud Optimized GeoTIFF (COG) relies on two characteristics of the TIFF v6 format (tiles and reduced resolution subfiles), GeoTIFF keys for georeference, and the HTTP range, which allows for efficient downloading of parts of imagery and grid coverage data on the web and to make fast data visualization of TIFF of BigTIFF files and fast geospatial processing workflows possible.
+The Cloud Optimized GeoTIFF (COG) relies on two characteristics of the TIFF v6 format (tiles and reduced resolution subfiles), GeoTIFF keys for georeference, and the HTTP range, which allows for efficient downloading of parts of imagery and grid coverage data on the web and to make fast data visualization of TIFF or BigTIFF files and fast geospatial processing workflows possible.
 COG aware applications can download only the information they need to visualize or process the data on the web. Numerous remote sensing datasets are available in cloud storage facilities that can benefit from optimized visualization and processing.
 This standard formalizes the requirements for a TIFF file to become a COG file and for the HTTP server to make COG files available fast on the web.
 
@@ -8,7 +8,7 @@ This standard formalizes the requirements for a TIFF file to become a COG file a
 
 The following are keywords to be used by search engines and document catalogues.
 
-ogcdoc, OGC document, Cloud, GeoTIFF, Imagery, Web
+ogcdoc, OGC document, Cloud, GeoTIFF, Imagery, Web, COG
 
 [big]*iii.   Preface*
 
