@@ -9,11 +9,11 @@ Defines what characteristics of the TIFF (or BigTIFF) format should be used. Tar
 
 Defines the overview characteristics of the TIFF (or BigTIFF) format that should be used. Target: TIFF Encoders (and COG clients)
 
-*<<geotiff-keys-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-http-range)
+*<<http-range-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-http-range)
 
 Defines how to use COG in the web to download only a fragment of the data. Target: A web Server (and COG web clients)
 
-*<<http-range-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys
+*<<geotiff-keys-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys
 
 Defines how to use GeoKeys to georeference the data. Target: GeoTIFF encoders
 
