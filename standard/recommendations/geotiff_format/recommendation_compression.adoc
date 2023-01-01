@@ -2,5 +2,5 @@
 [width="90%",cols="2,6"]
 |===
 |*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-class-geotiff/rec-compression
-| A {set:cellbgcolor:#EEEEEE}| In a COG file, tiled data should be compressed efficiently {set:cellbgcolor:#FFFFFF}
+| A {set:cellbgcolor:#EEEEEE}| In a COG file, tiled data should be compressed efficiently using LZW or JPEG compression.{set:cellbgcolor:#FFFFFF}
 |===
