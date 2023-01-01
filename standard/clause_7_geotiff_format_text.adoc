@@ -16,8 +16,7 @@ include::requirements/geotiff_format/basic_format.adoc[]
 include::recommendations/geotiff_format/basic_format.adoc[]
 
 ==== Tiles
-In the context for a TIFF file, *Tiling* is a strategy for dividing the content in the TIFF file differently than using the classical _Strips_. In the _Strips_ approach the data are organized into sequences of lines (rows) while *tiling* creates a number of internal rectangular _tiles_ stored in the actual image. In *Tiling* the information related to a particular bounding box is easier to extract as it is closer in the file than in the _strips_ approach. Actually, with  _strips_ all data from the previous rows needs to be read to get to the following rows.
-With *tiling*, a much quicker access to a certain area is possible so that the portion of the file that needs to be read can be adjusted to better match the application needs.
+In the context for a TIFF file, *Tiling* is a strategy for dividing the content in the TIFF file differently than using the classical _Strips_. In the _Strips_ approach the data are organized into sequences of lines (rows) while *tiling* creates a number of internal rectangular _tiles_ stored in the actual image. _Strips_ divide the content of an image vertically (rows) but not horizontally (columns). With _Tiling_, a much quicker access to a certain area or two dimensional bounding box is possible as the relevant data is closer in the file and the portion of bytes that needs to be read is smaller than in the _strips_ approach.
 
 include::requirements/geotiff_format/tiling.adoc[]
 
