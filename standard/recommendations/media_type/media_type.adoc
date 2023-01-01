@@ -2,8 +2,14 @@
 [width="90%",cols="2,6"]
 |===
 |*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-media-type/media-type
-| A {set:cellbgcolor:#EEEEEE}| When required, a COG file should use the MIME type _image/tiff_ with the application parameter value _cloud-optimized-geotiff_, therefore as follows:
+| A {set:cellbgcolor:#EEEEEE}| When required, a COG file should use the MIME type _image/tiff_ with the application parameter value _geotiff_ and the _profile_ parameters value _cloud-optimized_, therefore as follows:
 
-image/tiff; application=cloud-optimized-geotiff
+image/tiff; application=geotiff; profile=cloud-optimized
+ {set:cellbgcolor:#FFFFFF}
+| B {set:cellbgcolor:#EEEEEE}| Alternatively in an HTTP content negotiation a combination of Content-Type and Content-Profile can be used as follows:
+
+`Content-Type: image/tiff; application=geotiff` +
+`Content-Profile: http://www.opengis.net/def/profile/geotiff/cloud-optimized`
+
  {set:cellbgcolor:#FFFFFF}
 |===
