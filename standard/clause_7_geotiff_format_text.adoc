@@ -91,6 +91,8 @@ include::requirements/geotiff_overviews/overviews.adoc[]
 
 NOTE: The presence of _reduced-resolution subfiles_ in a COG file is optional. Only the COG files that conform to this conformance class are forced to have _reduced-resolution subfiles_.
 
+To increase performance, the IFD should be arranged in a particular order expressed in the following recommendation. A IFD is linked to the next IFD by specifying the offset of the next IFD. In the following recommendation, the "order" implies both the order of the IFD links as well as the position in the file implied by the offset.
+
 include::recommendations/geotiff_overviews/ifd_order.adoc[]
 
 NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be contiguous to its _reduced-resolution subfiles_ and their IFDs.
