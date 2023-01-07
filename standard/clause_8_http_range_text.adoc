@@ -3,7 +3,7 @@
 HTTP Version 1.1 introduced a range header in the GET requests that supports requesting only a fragment of a resource.
 If the server advertises "Accept-Ranges: bytes" in its response headers of a GET request, the server is telling the client that bytes of data can be requested in parts, in separated requests.
 The client can request just the bytes that it needs from the server at any time. In a web environment, this is very useful for serving files such as video. By using range requests, clients do not need to download the entire file to begin playing it.
-Herein this use case, this is useful to get only the tiles needed at a particular time. This is done by getting the headers and IFDs of this TIFF file first and using this information to determine the conversion between tile indices to byte ranges.
+In the case of Cloud Optimized GeoTIFF, HTTP range is useful to get only the tiles needed at a particular time. This is done by getting the headers and IFDs of this TIFF file first and using this information to determine the conversion between tile indices to byte ranges.
 A client trying to show a COG file on the screen can request the resolutions needed and only the tiles needed to cover the screen. Once the user moves or pans, other GET range requests will get the new needed resolutions and tiles.
 
 [[http-range-requirements-class]]
