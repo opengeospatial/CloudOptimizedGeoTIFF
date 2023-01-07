@@ -90,7 +90,13 @@ include::requirements/geotiff_overviews/overviews.adoc[]
 
 NOTE: The presence of _reduced-resolution subfiles_ in a COG file is optional. Only the COG files that conform to this conformance class are forced to have _reduced-resolution subfiles_.
 
-To increase performance, the IFD should be arranged in a particular order expressed in the following recommendation. A IFD is linked to the next IFD by specifying the offset of the next IFD. In the following recommendation, the "order" implies both the order of the IFD links as well as the position in the file implied by the offset.
+The TIFF spec is very flexible with how IFDs are positioned in the file; the only requirement is that the last 4 bytes of the IFD point to the byte offset of the next. So a totally valid TIFF could contain an optimized image where the full resolution image IFD is at the start of the file, the IFD of the first overview is at the end of the file, and the IFD of the second overview is at the middle of the file. Reading the header of an TIFF like this would require making three consecutive requests.
+
+To increase performance, the IFD should be arranged in a particular order expressed in the following recommendation. In the following recommendation, the "order" implies both the order of the IFD links as well as the position in the file implied by the offset.
+
+The advantage of this IFD order is allowing readers to fetch the entire TIFF header (including all IFDs for all subfiles) in a single request upon opening the file for the first time. This reduces the number of file accesses needed to read it and improves cache-ability of the TIFF header for repeat requests to the same image.
+
+For example, when the file is accessed by HTTP range, available from a S3 backed, the latency per HTTP request is about ~20-30ms that will be added other latencies due to data locality and internet transfer (~150ms is a common value). Fetching the header of a COG over 3 consecutive HTTP requests adds ~540ms of latency which is large enough to be perceived by the user, giving a feeling of slow/clunky display especially if rendered in a web browser. Minimizing the number of requests needed to read a COG file is more important over slow internet connections where latencies are exacerbated.
 
 include::recommendations/geotiff_overviews/ifd_order.adoc[]
 
