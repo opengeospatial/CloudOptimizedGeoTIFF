@@ -3,7 +3,7 @@ The following normative documents contain provisions that, through reference in 
 
 Adobe development association. TIFF Revision 6.0 Final — June 3, (1992) https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf
 
-Fielding R., Lafonand Y., Reschke J.: Hypertext Transfer Protocol (HTTP/1.1): Range Requests. RFC 7233. Internet Engineering Task Force (IETF). ISSN: 2070-1721 (2014) https://datatracker.ietf.org/doc/html/rfc7233
+Fielding, R., Nottingham, M. and Reschke, J.: HTTP Semantics RFC 9110, Section 14. Range Requests. Internet Engineering Task Force (IETF). ISSN: 2070-1721 (June 2022) https://www.rfc-editor.org/rfc/rfc9110#name-range-requests
 
 Devys E., Habermann T., Heazel C., Lott R., Rouault E.: OGC GeoTIFF Standard. OGC 19-008r4. (2019) http://docs.opengeospatial.org/is/19-008r4/19-008r4.html
 

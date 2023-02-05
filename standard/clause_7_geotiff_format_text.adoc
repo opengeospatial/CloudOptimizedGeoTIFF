@@ -102,25 +102,6 @@ include::recommendations/geotiff_overviews/ifd_order.adoc[]
 
 NOTE: There can be more than one full-resolution image data in the file. In this case, each full-resolution image data will be contiguous to its _reduced-resolution subfiles_ and their IFDs.
 
-[[geotiff-efficient-overviews-requirements-class]]
-=== Requirement Class Efficient GeoTIFF Overviews
-
-include::requirements/requirements_geotiff_efficient_overviews.adoc[]
-
-In the <<geotiff-overviews-requirements-class>> requirement class, there is no guidance on how many reduced resolution subfiles a given COG should have. In a TIFF file with a big image, a COG with zero or one overview, can be rendered on a web client but it could be too slow to process and show in a client app. This requirement class provides more restrictions on how the COG should be build to accelerate visualization in web clients.
-
-==== Requirement Small Tiles
-
-For efficient visualization, tiles should be small in their number of pixels, ideally a number smaller than the common number of pixels of a screen view port.
-
-include::requirements/geotiff_efficient_overviews/small_tiles.adoc[]
-
-==== Requirement Reduced-Resolution Subfiles Number
-
-The number of reduced resolution subfiles is defined ana a function of the number of pixels of the original image by creating progressive reduced resolution subfiles with less tiles until the number of tiles very small.  
-
-include::requirements/geotiff_efficient_overviews/number.adoc[]
-
 [[geotiff-keys-requirements-class]]
 === Requirement Class GeoTIFF Keys
 The GeoTIFF standard defines a mechanism to add GeoTIFF keys to a TIFF file.
@@ -129,9 +110,11 @@ The main purpose of these keys is to add a geospatial reference to the data stor
 include::requirements/requirements_geotiff_keys.adoc[]
 
 ==== Requirement GeoTIFF
-A COG uses GeoTIFF to document the metadata about the TIFF file.
+A COG uses GeoTIFF to document the metadata about the TIFF file, including the georeference of the full resolution images IFDs. The georeference of the Reduced-Resolution Subfiles is derived from the georeference of the full resolution images IFDs.
 
 include::requirements/geotiff_keys/basic_metadata_format.adoc[]
+
+The OGC-NA maintains a register of TIFF tags relevant for the geospatial community (most of them defined in the GeoTIFF standard) with the URL http://www.opengis.net/def/geotiff-tag. The COG standard does neither defines COG specific TIFF tags nor GeoTIFF keys. In the future it may be necessary for the communities that use COG to register tags for their specialist use cases. It is also possible that they reuse the existing GeoTIFF tags to define new GeoTIFF keys. Such tags or keys could then be organized into groups that deal with the needs of a particular domain.
 
 ==== Requirement Georeference Keys
 There is a geometrical relation between the reduced-resolution subfiles and the corresponding full-resolution subfile. Only full-resolution subfiles are required to have GeoTIFF keys.
@@ -187,3 +170,28 @@ In this example, IFD0 has `ImageWidth=20111` and `ImageHeigth=16882` while IFD1 
 30*20111/10056=59.997 and 30*16882/8441=60.
 
 As we can see in the example, tiles can easily result in non-square-pixels; a situation that should be handled by clients combining the data with other imagery that have square pixels.
+
+[[optimized_geotiff-requirements-class]]
+=== Requirement Class Optimized GeoTIFF
+
+include::requirements/requirements_optimized_geotiff.adoc[]
+
+In the <<geotiff-overviews-requirements-class>> requirement class, there is no guidance on how many reduced resolution subfiles a given COG should have. In a TIFF file with a big image, a COG with zero or one overview, can be rendered on a web client but it could be too slow to process and show in a client app. This requirement class provides more restrictions on how the COG should be build to accelerate visualization in web clients. It also adds the need for GeoTIFF as a dependency to <<geotiff-keys-requirements-class>> 
+
+==== Requirement Small Tiles
+
+For optimized visualization, tiles should be small in their number of pixels, ideally a number smaller than the common number of pixels of a screen view port.
+
+include::requirements/optimized_geotiff/small_tiles.adoc[]
+
+==== Requirement Reduced-Resolution Subfiles Number
+
+The number of reduced resolution subfiles is defined as a function of the number of pixels of the original image by creating progressive reduced resolution subfiles with less tiles until the number of tiles very small.  
+
+include::requirements/optimized_geotiff/number.adoc[]
+
+==== Requirement GeoTIFF
+
+The geospatial reference is necessary for optimized visualization with other geospatial data.  
+
+include::requirements/optimized_geotiff/geotiff.adoc[]

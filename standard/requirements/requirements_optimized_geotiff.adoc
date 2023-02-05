@@ -1,0 +1,9 @@
+[[req_optimized_geotiff]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/COG/1.0/req/req-class-optimized_geotiff {set:cellbgcolor:#FFFFFF}
+|Target type |TIFF encoder
+|Dependency |http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-overviews
+|Dependency |http://www.opengis.net/spec/COG/1.0/req/req-class-http-range
+|===

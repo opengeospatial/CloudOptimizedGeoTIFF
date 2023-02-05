@@ -5,5 +5,5 @@
 2+|http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format {set:cellbgcolor:#FFFFFF}
 |Target type |TIFF Encoder
 |Dependency |https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf
-|Dependency |bigtiff.org |
+|Dependency |http://bigtiff.org/ |
 |===

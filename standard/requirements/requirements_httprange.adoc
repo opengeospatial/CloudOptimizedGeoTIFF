@@ -4,6 +4,6 @@
 2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/COG/1.0/req/req-class-http-range {set:cellbgcolor:#FFFFFF}
 |Target type |Web server
-|Dependency |https://datatracker.ietf.org/doc/html/rfc7233
+|Dependency |https://www.rfc-editor.org/rfc/rfc9110#name-range-requests
 |Dependency |http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format
 |===
