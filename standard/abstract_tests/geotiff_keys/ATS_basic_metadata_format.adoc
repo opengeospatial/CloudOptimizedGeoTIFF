@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/geotiff-format/use-geotiff
 | Test Purpose | Validate that a COG file includes and encodes geospatial metadata following the GeoTIFF standard
-| Requirement | /req/geotiff-format/use-geotiff   <<req_geotiff-format-use-geotiff>>
+| Requirement | /req/geotiff-format/use-geotiff 
 | Test method | Validate the requirements of GeoTIFF metadata
 
 Test passes if geospatial metadata following the GeoTIFF standard is found on the COG file

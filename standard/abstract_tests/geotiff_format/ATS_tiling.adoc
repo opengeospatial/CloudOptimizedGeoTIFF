@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/geotiff-format/tiling
 | Test Purpose | Validate that all Image File Directories (IFD) in a COG file are organized into tiles
-| Requirement | /req/geotiff-format/tiling   <<req_geotiff-format-tiling>>
+| Requirement | /req/geotiff-format/tiling 
 | Test method | Validate the requirements of tiled IFDs
 
 Test passes if all Image File Directories (IFD) in a COG file are organized into tiles

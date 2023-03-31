@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/geotiff-keys/point-of-origin
 | Test Purpose | Validate that all reduced-resolution subfiles do not contain georeference data.
-| Requirement | /req/geotiff-keys/point-of-origin  <<req_geotiff-keys-point-of-origin>>
+| Requirement | /req/geotiff-keys/point-of-origin
 | Test method | Validate the requirements of no metadata in subfiles
 
 Test passes if all reduced-resolution subfiles do not contain georeference data in the COG file

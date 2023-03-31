@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/geotiff-format/use-geotiff
 | Test Purpose | Validate that a COG file bigger than 4 GByte follows the BigTIFF standard
-| Requirement | /req/geotiff-format/use-geotiff  <<req_geotiff-format-use-geotiff>>
+| Requirement | /req/geotiff-format/use-geotiff
 | Test method | Validate the requirements of the BiGTIFF
 
 Test passes if a COG file bigger than 4 GByte follows the BigTIFF standard

@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/geotiff-overviews/overviews
 | Test Purpose | Validate that a COG file contains the full resolution image as well as the reduced resolution images
-| Requirement | /req/geotiff-overviews/overviews  <<req_geotiff-overviews-overviews>>
+| Requirement | /req/geotiff-overviews/overviews
 | Test method | Validate the requirements of overviews
 
 Test passes if at least one IFD whose bit 0 of the value of the NewSubfileType tag is *not* set, or NewSubfileType absent (full-resolution image data) is present in the COG file and an the IFD with SubfileType 1 has an offset to an IFD with a NewSubfileType tag whose bit 0 is set (reduced-resolution image data), or 0 if there is no reduced-resolution image and all the IFD with a NewSubfileType tag whose bit 0 is set have an Image Width an Image Height inferior than the previous IFD.

@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/geotiff-keys/georeference
 | Test Purpose | Validate that a COG file contains georeference data using ModelTiepointTag, ModelPixelScaleTag and GeoKeyDirectoryTag tags in the IFD Subfiles of full resolution
-| Requirement | /req/geotiff-keys/georeference  <<req_geotiff-keys-georeference>>
+| Requirement | /req/geotiff-keys/georeference
 | Test method | Validate the requirements of georeference
 
 Test passes if georeference data using ModelTiepointTag, ModelPixelScaleTag and GeoKeyDirectoryTag tags is found in the IFD Subfiles of full resolution of the COG file (a.k.a IFDs whose bit 0 of the value of the NewSubfileType tag is *not* set, or NewSubfileType absent)
