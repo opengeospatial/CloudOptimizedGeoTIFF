@@ -16,6 +16,6 @@ TIFF:: Tagged Image File Format
 === Identifiers
 The normative provisions in this Standard are denoted by the URI
 
-http://www.opengis.net/spec/cog/{m.n}
+http://www.opengis.net/spec/cog/1.0
 
 All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.

@@ -3,7 +3,7 @@
 |===
 |*Abstract Test {counter:ats-id}* |/conf/http-range/https-headers
 | Test Purpose | Validate that the header Access-Control-Allow-Headers: range is provided
-| Requirement | <<req_http-range-https-headers>>
+| Requirement | /req/http-range/https-headers  <<req_http-range-https-headers>>
 | Test method | Validate the requirements of HTTPS allow headers
 
 Test passes if an HTTPS server advertises that allows access control for ranges by adding this line in the headers Access-Control-Allow-Headers: range

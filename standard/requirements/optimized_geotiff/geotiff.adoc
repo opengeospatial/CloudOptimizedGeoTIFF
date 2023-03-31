@@ -1,6 +1,6 @@
 [[req_optimized-geotiff-geotiff]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-efficient-overviews/number
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/optimized_geotiff/geotiff
 | A {set:cellbgcolor:#EEEEEE} | A COG file SHALL describe the georeference of the full resolution images IFDs, using geotiff keys.
 |===

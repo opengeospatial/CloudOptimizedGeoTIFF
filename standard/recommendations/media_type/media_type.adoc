@@ -1,7 +1,7 @@
 [%unnumbered]
 [width="90%",cols="2,6"]
 |===
-|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-media-type/media-type
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/media-type/media-type
 | A {set:cellbgcolor:#EEEEEE}| When required, a COG file should use the MIME type _image/tiff_ with the application parameter value _geotiff_ and the _profile_ parameters value _cloud-optimized_, therefore as follows:
 
 image/tiff; application=geotiff; profile=cloud-optimized

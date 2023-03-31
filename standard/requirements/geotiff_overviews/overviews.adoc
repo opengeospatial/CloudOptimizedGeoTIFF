@@ -1,7 +1,7 @@
 [[req_geotiff-overviews-overviews]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-overviews/overviews
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geotiff-overviews/overviews
 | A {set:cellbgcolor:#EEEEEE} | A COG file SHALL have at least one IFD with a NewSubfileType tag whose bit 0 is *not* set, or without a  NewSubfileType tag (full-resolution image data).  {set:cellbgcolor:#FFFFFF}
 | B {set:cellbgcolor:#EEEEEE} | An IFD with a NewSubfileType tag whose bit 0 is *not* set, or without a  NewSubfileType tag SHALL have an offset to the next IFD that will point to an IFD with a NewSubfileType tag whose bit 0 is set (reduced-resolution image data) if there is one, or an offset to the next full-resolution image data (e.g. another band or a mask) or an offset 0 if there is no other image. {set:cellbgcolor:#FFFFFF}
 | C {set:cellbgcolor:#EEEEEE} | This IFD with a NewSubfileType tag whose bit 0 is set SHALL have an Image Width an Image Height inferior than the previous IFD.  {set:cellbgcolor:#FFFFFF}

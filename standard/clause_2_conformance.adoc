@@ -1,21 +1,31 @@
 == Conformance
-This Standard defines 4 conformance classes.
+This Standard defines 5 conformance classes.
 
-*<<geotiff-format-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format)
+The following are the conformance classes that targets TIFF Encoders:
 
-Defines what characteristics of the TIFF (or BigTIFF) format should be used. Target: TIFF Encoders (and COG clients)
+*<<geotiff-format-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/geotiff-format)
 
-*<<geotiff-overviews-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-overviews)
+It defines what characteristics of the TIFF (or BigTIFF) format should be used. 
 
-Defines the overview characteristics of the TIFF (or BigTIFF) format that should be used. Target: TIFF Encoders (and COG clients)
+*<<geotiff-overviews-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/geotiff-overviews)
 
-*<<http-range-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/req-class-http-range)
+It defines the overview characteristics of the TIFF (or BigTIFF) format that should be used.
 
-Defines how to use COG in the web to download only a fragment of the data. Target: A web Server (and COG web clients)
+*<<geotiff-keys-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/geotiff-keys
 
-*<<geotiff-keys-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys
+It defines which GeoKeys to georeference the data that should be used. 
 
-Defines how to use GeoKeys to georeference the data. Target: GeoTIFF encoders
+*<<optimized_geotiff-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/optimized_geotiff
+
+It defines more restrictions on how the COG should be build to accelerate visualization in web clients. 
+
+
+The following conformance classes targets web servers
+
+*<<http-range-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/http-range)
+
+It defines how to use COG in the web to download only a fragment of the data. 
+
 
 Conformance with this Standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
 

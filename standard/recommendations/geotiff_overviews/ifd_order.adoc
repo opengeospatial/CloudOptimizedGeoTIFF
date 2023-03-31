@@ -1,7 +1,7 @@
 [%unnumbered]
 [width="90%",cols="2,6"]
 |===
-|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/rec-class-geotiff/ifd-order
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geotiff/ifd-order
 | A {set:cellbgcolor:#EEEEEE}| In a COG file, and after the TIFF/BigTIFF header/signature and pointer to first IFD (and an eventual _ghost area_) sections SHOULD follow the following order:
 
 1. IFD of the full resolution image, followed by TIFF tags values, excluding the TileOffsets and TileByteCounts arrays.
@@ -10,19 +10,19 @@
 
 3. IFD of the first (largest in dimensions) Reduced-Resolution Subfile, if present
 
-4. ...
+4. ...(there may be several sections for IFD of intermediate dimensions)
 
 5. IFD of the last (smallest) Reduced-Resolution Subfile, if present
 
 6. IFD of the first (largest in dimensions) Reduced-Resolution Subfile of the mask, if present
 
-7. ...
+7. ...(there may be several sections or IFD of intermediate dimensions for the mask)
 
 8. IFD of the last (smallest) Reduced-Resolution Subfile of the mask, if present TileOffsets and TileByteCounts arrays of the above IFDs
 
 9. tile data of the smallest Reduced-Resolution Subfile, if present (with each tile followed by the corresponding tile of mask data, if present), with leader and trailer bytes
 
-10. ...
+10. ...(there may be several tile data sections of intermediate resolutions).
 
 11. tile data of the largest Reduced-Resolution Subfile, if present (interleaved with mask data if present)
 

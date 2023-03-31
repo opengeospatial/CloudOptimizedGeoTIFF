@@ -1,6 +1,6 @@
 [[req_geotiff-keys-point-of-origin]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-keys/point-of-origin
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geotiff-keys/point-of-origin
 | A {set:cellbgcolor:#EEEEEE} | In a COG file all reduced-resolution subfiles SHALL not contain georeference data and use the one in the corresponding full resolution subfile. As a consequence, COG readers SHALL consider that all reduced-resolution subfiles share the same point of origin for the top left corner of the image as the full resolution subfile {set:cellbgcolor:#FFFFFF}
 |===

@@ -2,7 +2,7 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format {set:cellbgcolor:#FFFFFF}
+2+|http://www.opengis.net/spec/COG/1.0/req/geotiff-format {set:cellbgcolor:#FFFFFF}
 |Target type |TIFF Encoder
 |Dependency |https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf
 |Dependency |http://bigtiff.org/ |

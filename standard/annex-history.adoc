@@ -7,4 +7,5 @@
 |Date |Release |Editor | Primary clauses modified |Description
 |2021-10-26 |0.1 |Joan Masó |all |initial version from parts of OGC 21-025
 |2022-06-01 |0.2 |Joan Masó |all |First complete version including ATS
+|2023-03-31 |1.0 |Joan Masó |all |Revision from the naming authority
 |===

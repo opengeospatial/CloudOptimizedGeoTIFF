@@ -1,6 +1,6 @@
-[[req_geotiff-format-basic-metadata-format]]
+[[req_geotiff-keys-basic-metadata-format]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-format/basic-metadata-format
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geotiff-keys/basic-metadata-format
 | A {set:cellbgcolor:#EEEEEE} | A COG file SHALL include and encode geospatial metadata in the GeoTIFF format following the GeoTIFF standard {set:cellbgcolor:#FFFFFF}
 |===

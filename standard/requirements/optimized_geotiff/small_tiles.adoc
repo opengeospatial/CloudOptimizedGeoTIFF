@@ -1,7 +1,7 @@
 [[req_optimized-geotiff-small-size]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-efficient-overviews/small-sizes
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/optimized_geotiff/small-sizes
 | A {set:cellbgcolor:#EEEEEE} | A COG file SHALL have square tiles (TileWidth=TileLength) 
 | B {set:cellbgcolor:#EEEEEE} | A COG file SHALL define TileWidth and TileLength as a number smaller than or equal to the common screen viewport.
 |===

@@ -1,6 +1,6 @@
 [[req_geotiff-format-use-geotiff]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-geotiff-format/use-geotiff
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geotiff-format/use-geotiff
 | A {set:cellbgcolor:#EEEEEE} | If the resulting COG file is bigger than 4 GByte, the COG file SHALL follow the BigTIFF standard that modifies the TIFF version 6.0 standard {set:cellbgcolor:#FFFFFF}
 |===

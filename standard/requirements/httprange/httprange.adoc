@@ -1,7 +1,7 @@
 [[req_http-range-use-range]]
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/req-class-http-range/range
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/http-range/range
 | A {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server SHALL support serving COG files{set:cellbgcolor:#FFFFFF} 
 | A {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server SHALL support HTTP range {set:cellbgcolor:#FFFFFF}
 | B {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server shall use byte ranges. {set:cellbgcolor:#FFFFFF}

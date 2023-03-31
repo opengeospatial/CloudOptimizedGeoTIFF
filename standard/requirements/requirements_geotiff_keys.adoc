@@ -2,8 +2,8 @@
 [cols="1,4",width="90%"]
 |===
 2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
-2+|http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-keys {set:cellbgcolor:#FFFFFF}
+2+|http://www.opengis.net/spec/COG/1.0/req/geotiff-keys {set:cellbgcolor:#FFFFFF}
 |Target type |GeoTIFF Encoder
 |Dependency |http://www.opengis.net/spec/GeoTIFF/1.1/req/Core
-|Dependency |http://www.opengis.net/spec/COG/1.0/req/req-class-geotiff-format
+|Dependency |http://www.opengis.net/spec/COG/1.0/req/geotiff-format
 |===
