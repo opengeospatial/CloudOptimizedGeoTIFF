@@ -1,7 +1,7 @@
 [%unnumbered]
 [width="90%",cols="2,6"]
 |===
-|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geotiff/ifd-order
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geotiff-overviews/ifd-order
 | A {set:cellbgcolor:#EEEEEE}| In a COG file, and after the TIFF/BigTIFF header/signature and pointer to first IFD (and an eventual _ghost area_) sections SHOULD follow the following order:
 
 1. IFD of the full resolution image, followed by TIFF tags values, excluding the TileOffsets and TileByteCounts arrays.

@@ -1,7 +1,7 @@
 [%unnumbered]
 [width="90%",cols="2,6"]
 |===
-|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geotiff/rec-compression
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geotiff-format/rec-compression
 | A {set:cellbgcolor:#EEEEEE}| In a COG file, tiled data should be compressed efficiently using the original compression algorithm indicated in TIFF v6 (LZW or JPEG) or a more modern image compression algorithm. Be aware that certain compressions may not be supported by specific TIFF readers.{set:cellbgcolor:#FFFFFF}
 |===
 

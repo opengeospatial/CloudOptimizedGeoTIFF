@@ -176,7 +176,7 @@ As we can see in the example, tiles can easily result in non-square-pixels; a si
 
 include::requirements/requirements_optimized_geotiff.adoc[]
 
-In the <<geotiff-overviews-requirements-class>> requirement class, there is no guidance on how many reduced resolution subfiles a given COG should have. In a TIFF file with a big image, a COG with zero or one overview, can be rendered on a web client but it could be too slow to process and show in a client app. This requirement class provides more restrictions on how the COG should be build to accelerate visualization in web clients. It also adds the need for GeoTIFF as a dependency to <<geotiff-keys-requirements-class>> 
+In the <<geotiff-overviews-requirements-class>> requirement class, there is no guidance on how many reduced resolution subfiles a given COG should have. In a TIFF file with a big image, a COG with zero or one overview, can be rendered on a web client but it could be too slow to process and show in a client app. This requirement class provides more restrictions on how the COG should be build to accelerate visualization in web clients. It also adds the need for GeoTIFF as a dependency to <<geotiff-keys-requirements-class>>. The implementation of this conformance class and its dependencies generates what has been commonly called COG. 
 
 ==== Requirement Small Tiles
 
@@ -189,6 +189,10 @@ include::requirements/optimized_geotiff/small_tiles.adoc[]
 The number of reduced resolution subfiles is defined as a function of the number of pixels of the original image by creating progressive reduced resolution subfiles with less tiles until the number of tiles very small.  
 
 include::requirements/optimized_geotiff/number.adoc[]
+
+It is a common practice for visualization purposes that pixel sizes are generated as a power of 2. By selecting the number columns and rows of the original image also as a power of 2, each reduced resolution subfile can be generated from the previous smaller resolution by averaging the values of 4 contiguous pixels in one of the new subfile.
+
+include::recommendations/optimized_geotiff/size_and_number.adoc[]
 
 ==== Requirement GeoTIFF
 

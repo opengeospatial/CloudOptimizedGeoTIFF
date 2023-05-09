@@ -5,26 +5,25 @@ The following are the conformance classes that targets TIFF Encoders:
 
 *<<geotiff-format-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/geotiff-format)
 
-It defines what characteristics of the TIFF (or BigTIFF) format should be used. 
+It defines what characteristics of the TIFF (or BigTIFF) format should be used. Used alone responds to use cases doing analysis on images that can be processed by tiles. This images can be geospatial or other (e.g. medical scans)
 
 *<<geotiff-overviews-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/geotiff-overviews)
 
-It defines the overview characteristics of the TIFF (or BigTIFF) format that should be used.
+It defines the overview characteristics of the TIFF (or BigTIFF) format that should be used. Used alone responds to use cases doing data visualization on images. This images can be geospatial or other (e.g. medical scans)
 
 *<<geotiff-keys-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/geotiff-keys
 
-It defines which GeoKeys to georeference the data that should be used. 
+It defines which GeoKeys to georeference the data that should be used. It restricts the applicability to geospatial images.
 
 *<<optimized_geotiff-requirements-class>>* http://www.opengis.net/spec/COG/1.0/req/optimized_geotiff
 
-It defines more restrictions on how the COG should be build to accelerate visualization in web clients. 
-
+It defines more rules on how the images should be build to accelerate visualization in the cloud and web environments in general. This approach is what has made COG format popular.
 
 The following conformance classes targets web servers
 
 *<<http-range-requirements-class>>* (http://www.opengis.net/spec/COG/1.0/req/http-range)
 
-It defines how to use COG in the web to download only a fragment of the data. 
+It defines how to use COG in the cloud and the web to allow downloading only a fragment of the data. 
 
 
 Conformance with this Standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.

@@ -2,8 +2,8 @@
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/optimized_geotiff/number
-| A {set:cellbgcolor:#EEEEEE} | A COG file SHALL contain reduced resolution subfiles each one reducing the resolution by a maximum factor of 10 from the previous one.
+| A {set:cellbgcolor:#EEEEEE} | A COG file SHALL contain reduced resolution subfiles each one reducing the resolution by a minimum factor of 2 and a maximum factor of 10 from the previous one.
 | B {set:cellbgcolor:#EEEEEE} | In a COG file, the last reduced resolution subfile (the one with bigger pixel size) SHALL have TilesAcross or TilesDown equal to one.
 |===
 
-NOTE: A common way to implement this requirement is to define the resolution _r_ of the _n_ reduced resolution subfile as: _r~n~=2^n^ r~0~_ (where r~0~ is the resolution of the original image)
+
