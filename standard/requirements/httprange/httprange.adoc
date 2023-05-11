@@ -2,7 +2,11 @@
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/http-range/range
-| A {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server SHALL support serving COG files{set:cellbgcolor:#FFFFFF} 
-| A {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server SHALL support HTTP range {set:cellbgcolor:#FFFFFF}
-| B {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server shall use byte ranges. {set:cellbgcolor:#FFFFFF}
+| A {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server SHALL support serving TIFF files{set:cellbgcolor:#FFFFFF} 
+| B {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server SHALL support HTTP range {set:cellbgcolor:#FFFFFF}
+| C {set:cellbgcolor:#EEEEEE} | A HTTP or HTTPS server shall support _bytes_ ranges. {set:cellbgcolor:#FFFFFF}
 |===
+
+NOTE: Some web services are only capable to serve TIFF files if the MIME type (image/tiff) is registered
+
+NOTE: HTTP servers serving COG files advertise the support to _bytes_ ranges by adding this line in the headers: `Access-Ranges: bytes` of the response
