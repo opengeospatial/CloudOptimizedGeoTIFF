@@ -4,6 +4,8 @@ The Cloud Optimized GeoTIFF (COG) relies on two characteristics of the TIFF v6 f
 COG aware applications can download only the information they need to visualize or process the data on the web. Numerous remote sensing datasets are available in cloud storage facilities that can benefit from optimized visualization and processing.
 This standard formalizes the requirements for a TIFF file to become a COG file and for the HTTP server to make COG files available fast on the web.
 
+The key work for crafting this OGC Standard was undertaken in the Open-Earth-Monitor Cyberinfrastructure (OEMC) project, which received funding from the European Union’s Horizon Europe research and innovation program under grant agreement number 101059548 and in the All Data 4 Green Deal - An Integrated, FAIR Approach for the Common European Data Space (AD4GD) project, which received funding from the European Union’s Horizon Europe research and innovation program under grant agreement number 101061001. 
+
 [big]*ii.    Keywords*
 
 The following are keywords to be used by search engines and document catalogues.
