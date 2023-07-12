@@ -5,30 +5,29 @@ This document also uses terms defined in the OGC Standard for Modular specificat
 
 For the purposes of this document, the following additional terms and definitions apply.
 
-4.1. cloud computing::
+=== cloud computing::
 
 on-demand availability of computer system resources, especially data storage (cloud storage) and computing power, without direct active management by the user [Wikipedia]
 
-4.2. geokey::
+=== geokey::
 
-key in a  GeoTIFF  equivalent in function to a TIFF tag, but using a different offset
-mechanism
+key in a  GeoTIFF  equivalent in function to a TIFF tag, but using a different offset mechanism
 
-4.2. GeoTIFF::
+=== GeoTIFF::
 
 standard for storing georeference and geocoding information in a TIFF 6.0 compliant raster file or in a BigTIFF [GeoTIFF Format Specification 1.0, modified]
 
-4.3. overview::
+=== overview::
 
 downsampled versions of the same image.
 
 NOTE: There is no mention of the term _overview_ in the TIFF v6 specification. This standard favors the use of the expression Reduced-Resolution Subfile to talk about an _overview_
 
-4.3. tag::
+=== tag::
 
 packet of numerical or ASCII values, which have a numerical TIFF "Tag" identifier indicating their information content
 
-4.4. tile::
+=== tile::
 
 geometric shape with known properties that may or may not be the result of a tiling (tessellation) process. A tile consists of a single connected "piece" (topological disc) without "holes" or "lines" [OGC 19-014r3]+
 
@@ -36,6 +35,6 @@ In the context of a 2D _tile matrix_, a _tile_ is one of the rectangular regions
 
 In the context of a geospatial data _tile set_, a _tile_ contains data for such a partition of space as part of an overall set of tiles for that tiled geospatial data. [OGC 2DTMS]
 
-4.5. subfile::
+=== subfile::
 
 mechanism for including multiple images in a single TIFF file based on the use of IFDs

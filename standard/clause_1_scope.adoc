@@ -1,4 +1,4 @@
 == Scope
-This document is an OGC standard that specifies how TIFF files can be organized in a way that favors the extraction of convenient parts of the data at the needed resolution for visualization or analysis purposes. It also specifies how to use HTTP (or HTTPS) to communicate only the part of information needed without downloading the complete file. 
+This document is an OGC Standard that specifies how TIFF files can be organized in a way that favors the extraction of convenient parts of the data at the needed resolution for visualization or analysis purposes. It also specifies how to use HTTP (or HTTPS) to communicate only the part of information needed without downloading the complete file. 
 
-This document depends on the TIFF specification and the GeoTIFF standard. For big files, it depends on the BigTIFF community standard. The standard takes advantage of some existing characteristics of the TIFF specification and the existing HTTP range RFC and does not modify them in anyway.
+This document depends on the TIFF specification and the OGC GeoTIFF Standard. For big files, it also may depend on the BigTIFF specification. The Standard takes advantage of some existing characteristics of the TIFF specification and the existing HTTP range RFC and does not modify them in anyway.

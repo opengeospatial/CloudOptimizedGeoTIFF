@@ -1,4 +1,4 @@
-:Title: OGC Cloud Optimized GeoTIFF standard candidate
+:Title: OGC Cloud Optimized GeoTIFF Standard
 :titletext: {Title}
 :doctype: book
 :encoding: utf-8
@@ -20,11 +20,11 @@
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2022-06-29
-|Approval Date:   <yyyy-mm-dd>
+|Approval Date:   2023-05-08
 |Publication Date:   <yyyy-mm-dd>
 |External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
 |Internal reference number of this OGC(R) document:    21-026
-|Version: n.n
+|Version: 1.0
 |Category: OGC(R) Implementation Standard
 |Editor:   Joan Maso
 |===
@@ -37,7 +37,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) 2022 Open Geospatial Consortium
+|Copyright (C) 2023 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 
@@ -46,15 +46,13 @@
 |*Warning*
 |===
 
-This document is not an OGC Standard. This document is distributed for review and comment. This document is subject to change without notice and may not be referred to as an OGC Standard.
-
-Recipients of this document are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.
+This document is an OGC Member approved international standard. This document is available on a royalty free, non-discriminatory basis. Recipients of this document are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.
 
 [width = "50%", grid = "none"]
 |===
 |Document type:   	OGC® Standard
 |Document subtype:    
-|Document stage:   	Draft
+|Document stage:   	Approved
 |Document language: 	English
 |===
 

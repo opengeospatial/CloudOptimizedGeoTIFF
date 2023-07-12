@@ -1,10 +1,10 @@
 == References
 The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
 
-Adobe development association. TIFF Revision 6.0 Final — June 3, (1992) https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf
+Adobe Development Association. TIFF Revision 6.0 Final — June 3, (1992) https://www.itu.int/itudoc/itu-t/com16/tiff-fx/docs/tiff6.pdf
 
 Fielding, R., Nottingham, M. and Reschke, J.: HTTP Semantics RFC 9110, Section 14. Range Requests. Internet Engineering Task Force (IETF). ISSN: 2070-1721 (June 2022) https://www.rfc-editor.org/rfc/rfc9110#name-range-requests
 
-Devys E., Habermann T., Heazel C., Lott R., Rouault E.: OGC GeoTIFF Standard. OGC 19-008r4. (2019) http://docs.opengeospatial.org/is/19-008r4/19-008r4.html
+OGC: OGC GeoTIFF Standard. OGC 19-008r4. (2019) http://docs.opengeospatial.org/is/19-008r4/19-008r4.html
 
 van Damme J.: The BigTIFF File Format. https://www.awaresystems.be/imaging/tiff/bigtiff.html (No normative reference)

@@ -2,7 +2,7 @@
 [width="90%",cols="2,6"]
 |===
 |*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geotiff-format/rec-compression
-| A {set:cellbgcolor:#EEEEEE}| In a COG file, tiled data should be compressed efficiently using the original compression algorithm indicated in TIFF v6 (LZW or JPEG) or a more modern image compression algorithm. Be aware that certain compressions may not be supported by specific TIFF readers.{set:cellbgcolor:#FFFFFF}
+| A {set:cellbgcolor:#EEEEEE}| In a COG file, tiled data should be compressed efficiently using the original compression algorithm indicated in TIFF v6 (LZW or JPEG) or a more modern image compression algorithm. Be aware that certain compressions may not be supported by specific TIFF readers.{set:cellbgcolor:#FFFFFF}.
 |===
 
-NOTE: While  LZW and JPEG are the two image compressions mentioned in TIFF v6, there are many other image-based compressions that have become popular since TIFF v6's original release in 1992. Other possible compressions are: ZSTD, DEFLATE, WEBP, LERC, LERC_ZSTD etc. In particular, modern lossless compressions are better than the initially proposed LZW.  New compressions are constantly being released so this recommendation cannot limit compression to a fixed list. See https://www.awaresystems.be/imaging/tiff/tifftags/compression.html for more details.
+NOTE: While  LZW and JPEG are the two image compressions mentioned in TIFF v6, there are many other image-based compressions that have become popular since the TIFF v6 original release in 1992. Other possible compressions are: ZSTD, DEFLATE, WEBP, LERC, LERC_ZSTD, etc. In particular, modern lossless compressions are better than the initially proposed LZW.  New compressions are constantly being released so this recommendation cannot limit compression to a fixed list. See https://www.awaresystems.be/imaging/tiff/tifftags/compression.html for more details.
