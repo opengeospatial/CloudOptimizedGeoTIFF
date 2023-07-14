@@ -21,8 +21,8 @@
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2022-06-29
 |Approval Date:   2023-05-08
-|Publication Date:   <yyyy-mm-dd>
-|External identifier of this OGC(R) document: http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}
+|Publication Date:   2023-07-14
+|External identifier of this OGC(R) document: http://www.opengis.net/doc/is/COG/1.0
 |Internal reference number of this OGC(R) document:    21-026
 |Version: 1.0
 |Category: OGC(R) Implementation Standard
@@ -52,7 +52,7 @@ This document is an OGC Member approved international standard. This document is
 |===
 |Document type:   	OGC® Standard
 |Document subtype:    
-|Document stage:   	Approved
+|Document stage:   	Approved for public release
 |Document language: 	English
 |===
 
